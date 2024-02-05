@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Scouts Lod Lavki</title>
+
+        <!-- CSS FILES -->        
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="css/bootstrap-icons.css" rel="stylesheet">
+
+        <link href="css/templatemo-kind-heart-charity.css" rel="stylesheet">
+    </head>
+    
+    <body>
+
+    <nav role="navigation">
+        <div class="login">
+            <a class="follow" target="_blank"></a>
+        </div>
+    </nav>
+
+
+
+        <main>
+            <div class="row pop-up" id="confirmation">
+                <div class="content small-6 large-centered">
+                    <a href="#" class="close-button">&#10006;</a>
+                    <h3>lorem ipsum</h3>
+                    <p>Integer non odio id ante rutrum dictum. Nam ac dapibus felis, at pharetra sapien. </p>
+                    <p>Maecenas lacus nisi, pellentesque a congue vel, rhoncus sit amet lacus. Sed mattis ultrices risus in tincidunt.</p>
+                    <a class="button"><strong> learn More</strong></a>
+                </div>
+            </div>
+
+
+            <section class="donate-section">
+                <div class="section-overlay"></div>
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-6 col-12 mx-auto">
+                            <form id="myForm" class="custom-form donate-form" action="#" method="get" role="form">
+                                <h3 class="mb-4">Sponsor een loper</h3>
+
+                                <div class="row">
+
+                                    <div class="col-lg-12 col-12">
+                                        <h5 class="mt-2 mb-3">Selecteer een hoeveelheid</h5>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-6 col-6 form-check-group">
+                                        <div class="form-check form-check-radio">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                            <label class="form-check-label" for="flexRadioDefault1">
+                                                $10
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-6 col-6 form-check-group">
+                                        <div class="form-check form-check-radio">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                            <label class="form-check-label" for="flexRadioDefault2">
+                                                $15
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-6 col-6 form-check-group">
+                                        <div class="form-check form-check-radio">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                                            <label class="form-check-label" for="flexRadioDefault3">
+                                                $20
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-6 col-6 form-check-group">
+                                        <div class="form-check form-check-radio">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
+                                            <label class="form-check-label" for="flexRadioDefault4">
+                                                $30
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-6 col-6 form-check-group">
+                                        <div class="form-check form-check-radio">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault5">
+                                            <label class="form-check-label" for="flexRadioDefault5">
+                                                $45
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-6 col-6 form-check-group">
+                                        <div class="form-check form-check-radio">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault6">
+                                            <label class="form-check-label" for="flexRadioDefault6">
+                                                $50
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-12 form-check-group">
+                                        <div class="input-group">
+                                            <span class="input-group-text" id="basic-addon1">$</span>
+
+                                            <input type="text" class="form-control" placeholder="Aangepaste hoeveelheid" aria-label="Username" aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+
+                                    <div id="page-wrapper">
+                                        <h1>Selecteer Loper</h1>
+
+                                        <label for="default">selecteer de juiste tak</label>
+                                        <input type="text" id="default" list="languages" placeholder="Tak">
+
+                                        <datalist id="languages">
+
+                                        </datalist>
+                                        <label for="ajax">selecteer het juiste lid</label>
+                                        <input type="text" id="ajax" list="csv-datalist" placeholder="e.g. datalist">
+                                        <datalist id="csv-datalist"></datalist>
+                                        <div id="geselecteerdeNamen"></div>
+
+
+                                        <button type="submit" onclick="" class="form-control mt-4">Submit Donation</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </main>
+
+
+
+        <!-- JAVASCRIPT FILES -->
+        <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+
+        <script src="js/firebaseInitalisatie.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/donatie.js"></script>
+        <script src="js/dataOphalen.js"></script>
+        <script src="js/main.js"></script>
+
+    </body>
+</html>

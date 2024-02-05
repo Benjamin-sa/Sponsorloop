@@ -1,0 +1,1177 @@
+
+/*
+
+TemplateMo 581 Kind Heart Charity
+
+https://templatemo.com/tm-581-kind-heart-charity
+
+*/
+
+
+
+@font-face {
+    font-family: 'Metropolis';
+    src: url('../fonts/Metropolis/Metropolis-Regular.woff2') format('woff2'),
+        url('../fonts/Metropolis/Metropolis-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Metropolis';
+    src: url('../fonts/Metropolis/Metropolis-Light.woff2') format('woff2'),
+        url('../fonts/Metropolis/Metropolis-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Metropolis';
+    src: url('../fonts/Metropolis/Metropolis-SemiBold.woff2') format('woff2'),
+        url('../fonts/Metropolis/Metropolis-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Metropolis';
+    src: url('../fonts/Metropolis/Metropolis-Bold.woff2') format('woff2'),
+        url('../fonts/Metropolis/Metropolis-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+/*---------------------------------------
+  CUSTOM PROPERTIES ( VARIABLES )             
+-----------------------------------------*/
+:root {
+  --white-color:                  #ffffff;
+  --primary-color:                #295e15;
+  --secondary-color:              #1a2a56;
+  --section-bg-color:             #f0f8ff;
+  --site-footer-bg-color:         #44525d;
+  --custom-btn-bg-color:          #597081;
+  --custom-btn-bg-hover-color: #295e15;
+  --dark-color:                   #000000;
+  --p-color: #1a2a56;
+  --border-color:                 #e9eaeb;
+
+  --body-font-family:             'Metropolis', sans-serif;
+
+  --h1-font-size:                 52px;
+  --h2-font-size:                 46px;
+  --h3-font-size:                 32px;
+  --h4-font-size:                 28px;
+  --h5-font-size:                 24px;
+  --h6-font-size:                 22px;
+  --p-font-size:                  16px;
+  --btn-font-size:                18px;
+  --copyright-font-size:          14px;
+
+  --border-radius-large:          100px;
+  --border-radius-medium:         20px;
+  --border-radius-small:          10px;
+
+  --bs-card-border-radius:        20px;
+  --bs-card-inner-border-radius:  20px;
+  --x: 0px;
+  --y: 0px;
+
+
+  --font-weight-light:            300;
+  --font-weight-normal:           400;
+  --font-weight-semibold:         600;
+  --font-weight-bold:             700;
+  --circle-diameter:            300px;
+
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--white-color);
+  font-family: var(--body-font-family); 
+}
+
+
+/*---------------------------------------
+  TYPOGRAPHY               
+-----------------------------------------*/
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--dark-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: -1px;
+}
+
+h1 {
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -2px;
+}
+
+h2 {
+  color: var(--secondary-color);
+  font-size: var(--h2-font-size);
+  letter-spacing: -2px;
+}
+
+h3 {
+  font-size: var(--h3-font-size);
+}
+
+h4 {
+  font-size: var(--h4-font-size);
+}
+
+h5 {
+  color: var(--primary-color);
+  font-size: var(--h5-font-size);
+}
+
+h6 {
+  font-size: var(--h6-font-size);
+}
+
+p {
+  color: var(--p-color);
+  font-size: var(--p-font-size);
+  font-weight: var(--font-weight-light);
+}
+
+
+
+/*---------------------------------------
+  Laadscherm
+-----------------------------------------*/
+
+#loading-screen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.spinner {
+  animation: rotator 1.4s linear infinite;
+}
+
+@keyframes rotator {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(270deg); }
+}
+
+.path {
+  stroke-dasharray: 187;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+}
+
+@keyframes colors {
+  0% { stroke: #4285F4; }
+  25% { stroke: #DE3E35; }
+  50% { stroke: #F7C223; }
+  75% { stroke: #1B9A59; }
+  100% { stroke: #4285F4; }
+}
+
+@keyframes dash {
+  0% { stroke-dashoffset: 187; }
+  50% {
+    stroke-dashoffset: 46.75;
+    transform:rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: 187;
+    transform:rotate(450deg);
+  }
+}
+.checkmark {
+  width: 52px;
+  height: 52px;
+  display: none; /* Verberg de checkmark totdat de pagina is geladen */
+}
+
+.checkmark__check {
+  stroke-dasharray: 50;
+  stroke-dashoffset: 50;
+  stroke-width: 3;
+  stroke: #78C800;
+  fill: none;
+  animation: checkmark 0.6s ease-in-out;
+}
+
+@keyframes checkmark {
+  0% {
+    stroke-dashoffset: 50;
+    opacity: 1;
+  }
+  20% {
+    stroke-dashoffset: 31;
+    opacity: 1;
+  }
+  40% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+/*---------------------------------------
+  SECTION
+-----------------------------------------*/
+.section-padding {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.section-bg {
+  background-color: var(--section-bg-color);
+}
+
+.section-overlay {
+  background: rgba(0, 0, 0, 0.35);
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+}
+
+.section-overlay + .container {
+  position: relative;
+}
+
+/*---------------------------------------
+  SITE HEADER
+-----------------------------------------*/
+.follow {
+  padding: 0.5rem 1rem;
+  background: hsl(210 80% 60%);
+  border-radius: 5rem;
+  color: white;
+  font-weight: 400;
+  text-decoration-line: none;
+  opacity: 1;
+  z-index: 3;
+  position: fixed; /* Zorgt ervoor dat de knop op een vaste positie blijft */
+  right: 20px; /* Plaats de knop 10px van de rechterkant van het scherm */
+  top: 20px; /* Plaats de knop 10px van de bovenkant van het scherm */
+}
+
+
+
+
+
+
+
+
+/*---------------------------------------
+  CUSTOM ICON COLOR
+-----------------------------------------*/
+.custom-icon {
+  color: var(--secondary-color);
+}
+
+
+/*---------------------------------------
+  CUSTOM LIST
+-----------------------------------------*/
+.custom-list {
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+.custom-list-item {
+  list-style: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+/*---------------------------------------
+  CUSTOM TEXT BOX               
+-----------------------------------------*/
+.custom-text-box {
+  background: var(--white-color);
+  border-radius: var(--border-radius-medium);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 24px;
+  margin-top: 24px;
+  padding: 40px;
+}
+
+.custom-text-box-image {
+  border-radius: var(--border-radius-medium);
+}
+
+.img-fluid.w-100 {
+  border-radius: 15px; /* Pas dit aan naar de gewenste afronding */
+}
+
+
+.custom-text-box-icon {
+  background: var(--section-bg-color);
+  border-radius: var(--border-radius-large);
+  color: var(--secondary-color);
+  font-size: var(--h6-font-size);
+
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  width: 25px;
+  height: 25px;
+  line-height: 30px;
+}
+
+
+/*---------------------------------------
+LOGIN FORM
+-----------------------------------------*/
+
+#loginForm {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  background-color: #f0f0f0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: auto;
+}
+.firebaseui-idp-button.firebaseui-idp-email {
+  border-radius: 5px; /* Voeg wat randradius toe */
+  padding: 10px 20px; /* Voeg wat padding toe */
+  font-size: 16px; /* Verander de lettergrootte */
+  display: block; /* Zorgt ervoor dat de knop de volledige breedte van zijn container inneemt */
+  /* Voeg meer stijlen toe indien nodig */
+}
+
+.firebaseui-idp-button.firebaseui-idp-next {
+  border-radius: 5px; /* Voeg wat randradius toe */
+  padding: 10px 20px; /* Voeg wat padding toe */
+  font-size: 16px; /* Verander de lettergrootte */
+  display: block; /* Zorgt ervoor dat de knop de volledige breedte van zijn container inneemt */
+  /* Voeg meer stijlen toe indien nodig */
+}
+
+/* Stijl voor de "Cancel" knop */
+.firebaseui-id-submit {
+  border-radius: 5px; /* Voeg wat randradius toe */
+  padding: 10px 20px; /* Voeg wat padding toe */
+  font-size: 16px; /* Verander de lettergrootte */
+  display: block; /* Zorgt ervoor dat de knop de volledige breedte van zijn container inneemt */
+  /* Voeg meer stijlen toe indien nodig */
+}
+
+/* Pas de marge aan voor schermen kleiner dan 600px */
+@media screen and (max-width: 600px) {
+  #loginForm {
+    width: 90%;
+    padding: 5px;
+  }
+}
+/*---------------------------------------
+  HERO & HERO SLIDE         
+-----------------------------------------*/
+
+.hero-section-full-height {
+  height: 100vh;
+  min-height: 680px;
+  position: relative;
+
+}
+
+#hero-slide .carousel-item {
+  height: 100vh;
+  min-height: 680px;
+}
+
+.carousel-centered-image img{
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 600px) {
+  .carousel-centered-image img {
+
+    top: 70%; /* Top positie instellen op 50% */
+    left: 49%; /* Left positie instellen op 50% */
+    transform: translate(-50%, -50%); /* Transformeren om te centreren */
+    width: 175%;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+
+.carousel-image {
+  display: block;
+  position: fixed;
+  width: 100%;
+  min-height: 100vh;
+  object-fit: cover;
+}
+.arrow-circle {
+  position: absolute;
+  bottom: 10px;
+  top: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  animation: up-down 2s linear infinite;
+
+}
+
+.arrow-circle i {
+  font-size: 25px;
+}
+
+.arrow-circle:hover {
+  background-color: transparent; /* Change the background color on hover */
+  color: white; /* Change the text color on hover */
+    border: 2px solid white; /* Add a border on hover */
+}
+@keyframes up-down {
+  0% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, -20px); }
+  100% { transform: translate(-50%, 0); }
+}
+
+/*---------------------------------------
+  timeline BLOCK
+-----------------------------------------*/
+
+
+
+
+#section_3{
+  position: relative;
+  background-color: #f0f0f0;
+  z-index: 1;
+}
+
+.main-timeline-2 {
+  position: relative;
+
+}
+.overlay-div {
+  Z-index: 1;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2); /* Zwart met 50% transparantie */
+}
+
+.overlay-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.overlay-links, .overlay-date, .overlay-socials {
+  color: white;
+}
+
+/* The actual timeline (the vertical ruler) */
+.main-timeline-2::after {
+  content: "";
+  position: absolute;
+  width: 3px;
+  background-color: #295e15;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+.card-img-top {
+     width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+
+
+/* Container around content */
+.timeline-2 {
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease-out;
+  z-index: 1;
+}
+
+.timeline-2.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* The circles on the timeline */
+.timeline-2::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -11px;
+  background-color: #295e15;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+/* Place the container to the left */
+.left-2 {
+  padding: 0px 40px 20px 0px;
+  left: 0;
+}
+
+/* Place the container to the right */
+.right-2 {
+  padding: 0px 0px 20px 40px;
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left-2::before {
+  content: " ";
+  position: absolute;
+  top: 18px;
+  z-index: 1;
+  right: 30px;
+  border: medium solid #295e15;
+  border-width: 10px 0 10px 10px;
+  border-color:transparent #295e15;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right-2::before {
+  content: " ";
+  position: absolute;
+  top: 18px;
+  z-index: 1;
+  left: 30px;
+  border: medium solid #295e15;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent #295e15 transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right-2::after {
+  left: -14px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .main-timeline-2::after {
+    left: 31px;
+  }
+
+  /* Full-width containers */
+  .timeline-2 {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+    background-color: inherit;
+  }
+
+  /* Make sure that all arrows are pointing leftwards */
+  .timeline-2::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left-2::after,
+  .right-2::after {
+    left: 18px;
+  }
+
+  .left-2::before {
+    right: auto;
+  }
+
+  /* Make all right containers behave like the left ones */
+  .right-2 {
+    left: 0%;
+  }
+}
+/*---------------------------------------
+  COUNTER NUMBERS
+-----------------------------------------*/
+#section_2{
+  position: relative;
+  background-color: #f0f0f0;
+  z-index: 1;
+}
+
+
+#section_2{
+  background-color: #f0f0f0;
+  padding: 50px;
+  z-index: 1;
+}
+
+/*---------------------------------------
+  DONATE pagina
+-----------------------------------------*/
+
+#confirmation {
+  background-color: white;
+  border-radius: 10px;
+  display: none; /* Verberg de pop-up standaard */
+  position: fixed; /* Positie vastzetten op het scherm */
+  top: 50%; /* Centreren op de verticale as */
+  left: 50%; /* Centreren op de horizontale as */
+  transform: translate(-50%, -50%); /* Nauwkeurige centrering */
+  z-index: 1000; /* Zorg ervoor dat de pop-up boven andere elementen staat */
+
+}
+
+
+#confirmation .content {
+  display: flex; /* Zet de display op flex */
+  flex-direction: column; /* Zet de flex richting op kolom */
+  justify-content: center;
+  align-items: center; /* Centreer de inhoud verticaal */
+  height: 100%; /* Zorg ervoor dat de inhoud de volledige hoogte van de pop-up inneemt */
+  padding: 20px; /* Voeg wat ruimte toe rondom de inhoud */
+}
+
+@media screen and (max-width: 480px) {
+  #confirmation {
+    width: 90%; /* Zet de breedte op 90% voor schermen kleiner dan 480px */
+  }
+}
+
+
+.button {
+  text-decoration: none;
+  background-color: #FF8566;
+  margin-bottom: 33px;
+  border: 5px solid #000000; /* Voeg een omranding toe */
+  border-radius: 50px 50px 50px 50px;
+  padding: 10px 40px;
+}
+
+.button:hover {
+  /* Change the background color */
+  background-color: #1a2a56;
+
+  /* Add a shadow effect */
+  -webkit-box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.1);
+  -moz-box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.1);
+  box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.1);
+}
+
+.close-button {
+  position: absolute; /* Zet de positie op absoluut */
+  top: 0; /* Zet de afstand van de bovenkant */
+  left: 0; /* Zet de afstand van de linkerkant */
+  transition: all 0.5s ease;
+  background-color: #FF9980;
+  padding: 1.5px 7px;
+  text-decoration: none;
+
+  border-radius: 50%;
+  border: 2px solid #fff;
+  color: white;
+}
+
+.close-button:hover {
+  background-color: tomato;
+  color: #fff;
+}
+
+.donate-section {
+  background-image: url('../images/scouts/6.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+
+.donate-form {
+  background: var(--white-color);
+  border-radius: var(--border-radius-medium);
+  position: relative;
+  overflow: hidden;
+  padding: 50px;
+}
+
+.custom-form .form-control,
+.input-group-file {
+  background-color: var(--section-bg-color);
+  box-shadow: none;
+  border: 0;
+  color: var(--p-color);
+  margin-bottom: 24px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  outline: none;
+}
+
+.custom-form .form-control:hover,
+.custom-form .form-control:focus {
+  border-color: var(--secondary-color);
+}
+
+.custom-form label {
+  margin-bottom: 10px;
+}
+
+.custom-form .form-check-group {
+  margin-bottom: 20px;
+}
+
+
+.form-check-group-donation-frequency .form-check-label {
+  font-weight: var(--font-weight-semibold);
+}
+
+.custom-form .form-check-radio {
+  position: relative;
+  height: 100%;
+  padding-left: 0;
+}
+
+.custom-form .input-group-text {
+  background: var(--secondary-color);
+  border: 0;
+  color: var(--white-color);
+}
+
+.custom-form .form-check-radio .form-check-label {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.form-check-radio .form-check-input[type=radio] {
+  background-color: var(--section-bg-color);
+  border-radius: .25rem;
+  border: 0;
+  box-shadow: none;
+  outline: none;
+  width: 100%;
+  margin-top: 0;
+  margin-left: 0;
+  padding: 25px 50px;
+  transition: all 0.5s;
+}
+
+.form-check-radio .form-check-input:checked[type=radio] {
+  background-image: none;
+}
+
+.form-check-radio .form-check-input:checked[type=radio] + .form-check-label,
+.form-check-radio .form-check-input:hover + .form-check-label,
+.form-check-radio .form-check-input:checked + .form-check-label {
+  color: var(--white-color);
+}
+
+.form-check-radio .form-check-input:hover,
+.form-check-radio .form-check-input:checked {
+  background-color: var(--secondary-color);
+  border-color: var(--white-color);
+}
+
+
+.input-group-file .input-group-text {
+  background: transparent;
+  color: inherit;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.custom-form button[type="submit"] {
+  background: var(--custom-btn-bg-color);
+  border: none;
+  border-radius: var(--border-radius-large);
+  color: var(--white-color);
+  font-size: var(--p-font-size);
+  font-weight: var(--font-weight-semibold);
+  transition: all 0.3s;
+  margin-bottom: 0;
+}
+
+.custom-form button[type="submit"]:hover,
+.custom-form button[type="submit"]:focus {
+  background: var(--custom-btn-bg-hover-color);
+  border-color: transparent;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+
+#page-wrapper {
+  width: 640px;
+  background: #FFFFFF;
+  padding: 1em;
+  margin: 1em auto;
+  border-top: 5px solid #69c773;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.8);
+}
+
+h1 {
+  margin-top: 0;
+}
+
+label {
+  display: block;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+  color: #999999;
+}
+
+input {
+  width: 100%;
+  padding: 0.5em 0.5em;
+  font-size: 1.2em;
+  border-radius: 3px;
+  border: 1px solid #D9D9D9;
+}
+
+button {
+  display: inline-block;
+  border-radius: 3px;
+  border: none;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.8em;
+  background: #69c773;
+  border-bottom: 1px solid #498b50;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  font-weight: bold;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+
+button:hover, button:focus {
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+button:active {
+  opacity: 1;
+  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.1) inset;
+}
+
+
+/*---------------------------------------
+  CONTACT SEARCH & DONATE & SUBCRIBE FORM
+-----------------------------------------*/
+
+
+.donate-form .form-control {
+  margin-bottom: 0;
+}
+
+/*---------------------------------------
+golven
+-----------------------------------------*/
+
+.wave {
+  overflow: hidden;
+  position: absolute;
+  width: 140%;
+  transform: translateY(-50%);
+  color: #fff;
+  margin-left: -20%;
+  animation: 3s ease-in-out infinite alternate waveAnimateA;
+
+
+  svg {
+    fill: currentColor;
+    width: 102%;
+    margin-left: -1%;
+    height: auto;
+  }
+}
+
+
+
+@keyframes waveAnimateA {
+  0% {
+    transform: translate(-80px,-52%);
+  }
+
+  100% {
+    transform: translate(80px,-50%);
+  }
+}
+
+.demo2 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 3;
+
+  .parallax > use {
+    animation: waveAnimateB 14s linear infinite;
+
+    &:nth-child(1) {
+      animation-delay: -2s;
+      animation-duration: 7s;
+      fill-opacity: .2;
+    }
+
+    &:nth-child(2) {
+      animation-delay: -3s;
+      animation-duration: 12s;
+      fill-opacity: 1;
+    }
+  }
+}
+
+
+@keyframes waveAnimateB {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+
+/*---------------------------------------
+  FOOTER
+-----------------------------------------*/
+.rechtsanimatie{
+  opacity: 0;
+  transform: translatex(-20px);
+  transition: all 0.5s ease-out;
+}
+
+.rechtsanimatie.animate{
+  opacity: 1;
+  transform: translatex(0);
+}
+
+.linksanimatie{
+  opacity: 0;
+  transform: translatex(20px);
+  transition: all 0.5s ease-out;
+}
+
+.linksanimatie.animate{
+  opacity: 1;
+  transform: translatex(0);
+}
+/*---------------------------------------
+  RESPONSIVE STYLES
+-----------------------------------------*/
+
+@media screen and (max-width: 1170px) {
+  #hero-slide .carousel-image {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+@media screen and (max-width: 600px) {
+  .carousel-centered-image {
+    position: static;
+    transform: none;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  h1 {
+    font-size: 42px;
+  }
+
+  h2 {
+    font-size: 36px;
+  }
+
+  h3 {
+    font-size: 32px;
+  }
+
+  h4 {
+    font-size: 28px;
+  }
+
+  h5 {
+    font-size: 20px;
+  }
+
+  h6 {
+    font-size: 18px;
+  }
+
+  .section-padding {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .hero-form {
+    padding-bottom: 40px;
+  }
+
+  .donate-form {
+    padding: 35px;
+  }
+
+
+  .site-header .social-icon {
+    text-align: left;
+    margin-top: 5px;
+  }
+
+  .hero-section-full-height {
+    height: inherit;
+  }
+
+  .carousel:hover .carousel-control-next-icon,
+  .carousel:hover .carousel-control-prev-icon {
+    opacity: 1;
+  }
+
+  #hero-slide .carousel-item {
+    height: inherit;
+  }
+
+  .carousel-control-prev {
+    left: 12px;
+  }
+
+  .carousel-control-next {
+    right: 12px;
+  }
+
+
+  .cta-section::before {
+    width: 150px;
+    height: 150px;
+  }
+
+  .cta-section::after {
+    bottom: -60px;
+    width: 100px;
+    height: 100px;
+  }
+
+  .cta-section .row {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+
+
+  #testimonial-carousel .carousel-caption {
+    padding-top: 0;
+  }
+
+  blockquote {
+    padding: 70px 30px 30px 30px;
+  }
+
+  .about-image {
+    width: inherit;
+    height: 450px;
+  }
+
+  .custom-text-box {
+    padding: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+
+
+}
+
+@media screen and (max-width: 580px) {
+  .hero-section-full-height,
+  #hero-slide .carousel-item,
+  .carousel-image {
+    min-height: 520px;
+  }
+
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  h3 {
+    font-size: 26px;
+  }
+
+  h4 {
+    font-size: 22px;
+  }
+
+  h5 {
+    font-size: 20px;
+  }
+
+
+  .
+
+  .donate-form {
+    padding: 25px;
+  }
+}
+
