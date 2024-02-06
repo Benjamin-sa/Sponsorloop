@@ -177,6 +177,7 @@ p {
 
 .spinner {
   animation: rotator 1.4s linear infinite;
+  will-change: transform;
 }
 
 @keyframes rotator {
@@ -189,6 +190,7 @@ p {
   stroke-dashoffset: 0;
   transform-origin: center;
   animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+  will-change: stroke-dashoffset, transform;
 }
 
 @keyframes colors {
@@ -440,7 +442,7 @@ LOGIN FORM
 }
 
 .carousel-item img {
-  filter: blur(3px);
+  filter: blur(10px);
 }
 
 .carousel-centered-image img{
