@@ -567,6 +567,9 @@ LOGIN FORM
 
   #section_2{
     padding: 10px;
+    padding-top: 25px;
+    border-radius: 30px;
+
   }
 }
 
