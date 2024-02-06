@@ -8,7 +8,6 @@ firebase.auth().onAuthStateChanged(user => {
 /*----------------------------------------------------*/
 const customAmountInput = document.querySelector('.form-control');
 const radioButtons = document.querySelectorAll('.form-check-input');
-const db = firebase.firestore();
 
 customAmountInput.addEventListener('input', () => {
     radioButtons.forEach(radioButton => {
