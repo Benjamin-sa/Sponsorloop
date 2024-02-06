@@ -322,7 +322,7 @@ p {
   border-radius: var(--border-radius-medium);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   margin-bottom: 24px;
-  margin-top: 24px;
+  margin-top: 15px;
   padding: 40px;
 }
 
@@ -341,7 +341,8 @@ p {
 
   .custom-text-box{
     padding: 20px;
-    margin: 10px;
+    margin: 5px;
+
   }
 }
 
@@ -500,6 +501,82 @@ LOGIN FORM
   0% { transform: translate(-50%, 0); }
   50% { transform: translate(-50%, -20px); }
   100% { transform: translate(-50%, 0); }
+}
+
+
+
+/*---------------------------------------
+  ABOUT SECTION
+-----------------------------------------*/
+#section_2{
+  position: relative;
+  background-color: #f0f0f0;
+  z-index: 1;
+}
+
+
+#section_2{
+  background-color: #f0f0f0;
+  padding: 50px;
+  z-index: 1;
+}
+
+.pulsediv{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  padding: 30px;
+}
+.pulse-button {
+
+  position: relative;
+  display: block;
+  width: 400px;
+  height: 100px;
+  font-size: 1.3em;
+  text-align: center;
+  line-height: 100px;
+  letter-spacing: -1px;
+  border-radius: var(--border-radius-large);
+  color: white;
+  border: none;
+  background: #2b5622;
+  cursor: pointer;
+  box-shadow: 0 0 0 0 rgb(96, 143, 87);
+  animation: pulse 1.5s infinite;
+}
+
+.pulse-button:hover {
+  animation: none;
+}
+
+@media screen and (max-width: 600px) {
+  .pulsediv {
+    padding: 10px;
+
+  }
+
+  #section_2{
+    padding: 10px;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.9);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 50px rgba(90, 153, 212, 0);
+  }
+  100% {
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 rgba(90, 153, 212, 0);
+  }
 }
 
 /*---------------------------------------
@@ -661,75 +738,6 @@ LOGIN FORM
   /* Make all right containers behave like the left ones */
   .right-2 {
     left: 0%;
-  }
-}
-/*---------------------------------------
-  COUNTER NUMBERS
------------------------------------------*/
-#section_2{
-  position: relative;
-  background-color: #f0f0f0;
-  z-index: 1;
-}
-
-
-#section_2{
-  background-color: #f0f0f0;
-  padding: 50px;
-  z-index: 1;
-}
-
-.pulsediv{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    padding: 30px;
-}
-.pulse-button {
-
-  position: relative;
-  display: block;
-  width: 400px;
-  height: 100px;
-  font-size: 1.3em;
-  text-align: center;
-  line-height: 100px;
-  letter-spacing: -1px;
-  border-radius: var(--border-radius-large);
-  color: white;
-  border: none;
-  background: #2b5622;
-  cursor: pointer;
-  box-shadow: 0 0 0 0 rgb(96, 143, 87);
-  animation: pulse 1.5s infinite;
-}
-
-.pulse-button:hover {
-  animation: none;
-}
-
-@media screen and (max-width: 600px) {
-  .pulsediv {
-    padding: 10px;
-
-  }
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(0.9);
-  }
-  70% {
-    transform: scale(1);
-    box-shadow: 0 0 0 50px rgba(90, 153, 212, 0);
-  }
-  100% {
-    transform: scale(0.9);
-    box-shadow: 0 0 0 0 rgba(90, 153, 212, 0);
   }
 }
 /*---------------------------------------
@@ -929,6 +937,17 @@ LOGIN FORM
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+
+.naamTabel{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  border-collapse: collapse;
+  padding: 10px;
+  gap: 20px;
+}
+
 
 
 
@@ -1154,6 +1173,7 @@ golven
   .section-padding {
     padding-top: 50px;
     padding-bottom: 50px;
+    padding-left: 15px;
   }
 
   .hero-form {

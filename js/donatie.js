@@ -26,15 +26,21 @@ radioButtons.forEach(radioButton => {
 const submitButton = document.querySelector('button[type="submit"]');
 submitButton.addEventListener('click', event => {
     event.preventDefault();
-    const popup = document.getElementById('confirmation');
-    popup.style.display = 'block';
-});
-const closeButton = document.querySelector('#confirmation .close-button');
-closeButton.addEventListener('click', () => {
-    const popup = document.getElementById('confirmation');
-    popup.style.display = 'none';
+
+    const selectedNames = getSelectedNames();
+    const amount = getSelectedAmount();
+
+    if (selectedNames.length > 0 && amount) {
+        const popup = document.getElementById('confirmation');
+        popup.style.display = 'block';
+    } else {
+        alert('Selecteer a.u.b. een naam en een bedrag voordat u verdergaat.');
+    }
 });
 
+document.getElementById('close').addEventListener('click', function() {
+    document.getElementById('confirmation').style.display = 'none';
+});
 
 /*----------------------------------------------------*/
 /*  de big boy functies
@@ -76,8 +82,9 @@ function getSelectedAmount() {
     return document.querySelector('input[aria-label="hoeveelheid"]').value;
 }
 
-const confirmatie = document.getElementById('confirmation');
-confirmatie.addEventListener('click', async () => {
+
+
+document.getElementById('Goed').addEventListener('click', async () => {
     if (!parsedData) {
         await parseCsvData();
     }
@@ -133,6 +140,7 @@ confirmatie.addEventListener('click', async () => {
                 });
             }).catch((error) => {
                 console.error("Error writing document: ", error);
+                alert('Er is een fout opgetreden bij het schrijven van de gegevens probeer het opnieuw');
             });
         }
     }

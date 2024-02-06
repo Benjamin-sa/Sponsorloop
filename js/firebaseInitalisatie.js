@@ -10,5 +10,5 @@ var firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-
-var db = firebase.firestore();
+db = firebase.firestore();
+console.log('Firebase geinitialiseerd');

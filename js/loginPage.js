@@ -42,8 +42,8 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
 var uiConfig = {
     callbacks: {
         signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+
             // Gebruiker is succesvol geregistreerd.
-            // Je kunt hier de authResult gebruiken om meer informatie over de gebruiker te krijgen.
             window.location.href = "index.html";
             return true;  // Wanneer deze methode true retourneert, wordt de pagina vernieuwd.
         },
