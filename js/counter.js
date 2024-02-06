@@ -1,5 +1,5 @@
 // Definieer de einddatum
-var countDownDate = new Date("Dec 31, 2024 23:59:59").getTime();
+var countDownDate = new Date("May 18, 2024 00:00:01").getTime();
 
 // Update de teller elke seconde
 var x = setInterval(function() {

@@ -39,12 +39,18 @@
         <main>
             <div id="loginForm" class="p-3 border rounded">
                 <a href="#" class="close-button">&#10006;</a>
-                <form class="form-signin">
-                    <h1 class="h3 mb-3 font-weight-normal">Log in</h1>
-                    <div id="firebaseui-auth-container" class="d-flex align-content-center"></div>
-
+                <form id="registerForm" class="form-signin">
+                    <h1 class="h3 mb-3 font-weight-normal">log in</h1>
+                    <input type="email" id="emailField" class="form-control" placeholder="Email address" required autofocus>
+                    <input type="password" id="passwordField" class="form-control" placeholder="Password" required>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">log in</button>
+                    <button id="forgotPassword" class="btn btn-link">Wachtwoord vergeten?</button>
+                    <h1 class="h3 mb-3 font-weight-normal">of Registreer</h1>
                 </form>
+                <div id="firebaseui-auth-container"></div>
             </div>
+
+
 
             <section class="hero-section hero-section-full-height vh-100" id="section_1">
             <div class="container-fluid">
@@ -84,65 +90,78 @@
                 <div class="container">
 
                     <div class="row">
-                        <div class="col-lg-6 ">
-                            <div class="custom-text-box mx-auto rechtsanimatie">
-                                <h2 class="mb-2">Waarom sponsorloop ?</h2>
+                        <div class="col-lg-6">
+                            <div class="custom-text-box rechtsanimatie">
+                                <h2 class="mb-2">Waarom een Sponsorloop?</h2>
 
-                                <h5 class="mb-3">Help is onze eeuwe oude misse</h5>
+                                <h5 class="mb-3">Help ons eeuwenoude missie</h5>
 
-                                <p class="mb-0">Onze sponsorloop ondersteunt de bedevaart van scouts Lod Lavki, die om de 7 jaar de onvergetelijke reis van Lourdes naar de Spaanse Pyreneeën maakt. Een traditie die bloeit ter ere van de Virga Jesse feesten in Hasselt, beladen met geschiedenis en diep geworteld in het hart van scouts Lod Lavki. Jouw steun draagt bij aan dit bijzondere moment en laat de geest van solidariteit en avontuur hoog in het vaandel van onze scouts wapperen.</p>
-
+                                <p class="mb-0">Onze sponsorloop ondersteunt de bedevaart van Scouts Lod Lavki, die elke 7 jaar de onvergetelijke reis van Lourdes naar de Spaanse Pyreneeën maakt. Een traditie die bloeit ter ere van de Virga Jesse feesten in Hasselt, beladen met geschiedenis en diep geworteld in het hart van Scouts Lod Lavki. Jouw steun draagt bij aan dit bijzondere moment en laat de geest van solidariteit en avontuur hoog in het vaandel van onze scouts wapperen.</p>
                             </div>
                         </div>
+
                         <div class="col-lg-6 custom-text-box-image linksanimatie">
-                        <img src="images/scouts/groepsfoto.jpg" alt="Beschrijving van de afbeelding" class="img-fluid w-100">
+                            <img src="images/scouts/groepsfoto.jpg" alt="Groepsfoto" class="img-fluid w-100">
+                        </div>
                     </div>
-                    </div>
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-12">
-                                    <div class="custom-text-box mb-lg-0 mx-auto rechtsanimatie">
-                                        <h5 class="mb-3">Hoe sponsoren ?</h5>
 
-                                        <p>volg deze gemakkelijke stappen</p>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div class="custom-text-box mb-lg-0 mx-auto rechtsanimatie">
+                                <h5 class="mb-3">Hoe kun je sponsoren?</h5>
 
-                                        <ul class="custom-list mt-2">
-                                            <li class="custom-list-item d-flex">
-                                                <i class="bi-check custom-text-box-icon me-2"></i>
-                                                maak een account aan of log in
-                                            </li>
+                                <p>Volg deze eenvoudige stappen:</p>
 
-                                            <li class="custom-list-item d-flex">
-                                                <i class="bi-check custom-text-box-icon me-2"></i>
-                                                Druk op de onderstaande knop en kies een bedrag
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                <ul class="custom-list mt-2">
+                                    <li class="custom-list-item d-flex">
+                                        <i class="bi-check custom-text-box-icon me-2"></i>
+                                        Maak een account aan of log in.
+                                    </li>
 
-                                <div class="col-lg-6 col-md-6 col-12">
-                                    <div class="custom-text-box d-flex flex-wrap d-lg-block mb-lg-0 rechtsanimatie mx-auto">
-                                        <div class="counter-thumb">
-                                            <div class="d-flex flex-column">
-                                                <h5 class="mb-3">CountDown</h5>
-                                                <div id="demo" class="display-6 fw-bolder "></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-12 col-12">
-                                    <div class="custom-text-box ">
-                                        <h5 class="mb-3">Our Vision</h5>
-
-
-
-
+                                    <li class="custom-list-item d-flex">
+                                        <i class="bi-check custom-text-box-icon me-2"></i>
+                                        Druk op de onderstaande knop en kies een bedrag.
+                                    </li>
+                                </ul>
                             </div>
                         </div>
-                            </div>
-                    </div>
-            </section>
 
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div class="custom-text-box d-flex flex-wrap d-lg-block mb-lg-0 linksanimatie ">
+                                <div class="counter-thumb">
+                                    <div class="d-flex flex-column">
+                                        <h5 class="mb-3">Nog even maar!</h5>
+                                        <div id="demo" class="display-6 fw-bolder"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pulsediv">
+                        <button class="pulse-button">Sponsor een Loper!</button>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <div class="custom-text-box d-flex flex-wrap d-lg-block mb-lg-0 linksanimatie ">
+                            <div class="counter-thumb">
+                                <div id="leaderboard">
+                                    <table>
+                                        <thead>
+                                        <tr>
+                                            <th>Naam</th>
+                                            <th>Score</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="leaderboardBody">
+                                        <!-- Leden worden hier dynamisch toegevoegd -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </section>
 
             <section id="section_3">
                 <div class="container py-5">
@@ -153,7 +172,7 @@
                     <div class="main-timeline-2">
                         <div class="timeline-2 left-2">
                             <div class="card">
-                                <img src="images/scouts/v1.jpg" class="card-img-top"
+                                <img src="images/scouts/v1.jpg" class="card-img"
                                      alt="Responsive image">
                                 <div class="card-body p-4">
                                     <h4 class="fw-bold mb-4">Oprichting van "den Eersten Troep "</h4>
@@ -164,7 +183,7 @@
                         </div>
                         <div class="timeline-2 right-2">
                             <div class="card">
-                                <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(129).webp" class="card-img-top"
+                                <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(129).webp" class="card-img"
                                      alt="Responsive image">
                                 <div class="card-body p-4">
                                     <h4 class="fw-bold mb-4">Overlijden van Lod Lavki en transformatie tot Lod Lavkigroep</h4>
@@ -247,6 +266,7 @@
         <script src="js/loginPage.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/counter.js"></script>
+        <script src="js/dataOphalen.js"></script>
 
 
     </body>

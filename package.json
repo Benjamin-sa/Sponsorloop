@@ -4,7 +4,9 @@
     "firebase": "^10.7.2",
     "firebase-admin": "^12.0.0",
     "firebaseui": "^6.1.0",
-    "jquery": "^3.7.1",
-    "smoothscroll-polyfill": "^0.4.4"
+    "jquery": "^3.7.1"
+  },
+  "scripts": {
+    "start": "node server.js"
   }
 }

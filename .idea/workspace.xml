@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_INJECTED_CODE" value="false" />
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cfa32562-3e32-4149-bf92-40f96c82a90e" name="Changes" comment="verwijder node_modules">
+      <change afterPath="$PROJECT_DIR$/js/csvophalen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sponsorloop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sponsorloop.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/templatemo-kind-heart-charity.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/templatemo-kind-heart-charity.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/donate.html" beforeDir="false" afterPath="$PROJECT_DIR$/donate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/counter.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/counter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dataOphalen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/dataOphalen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/donatie.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/donatie.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/firebaseInitalisatie.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/firebaseInitalisatie.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/ledenlijst.csv" beforeDir="false" afterPath="$PROJECT_DIR$/js/ledenlijst.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/loginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/loginPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2bj96VNwnS4pB244UFYM0xZFVq4" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JavaScript Debug.donate.html.executor": "Debug",
+    "Node.js.dataOphalen.js.executor": "Run",
+    "Node.js.donatie.js.executor": "Run",
+    "Node.js.ledenlijst.js.executor": "Run",
+    "Node.js.sorteren.js.executor": "Run",
+    "Node.js.test.js.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "javascript.nodejs.core.library.configured.version": "20.11.0",
+    "javascript.nodejs.core.library.typings.version": "20.11.15",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/benke/IdeaProjects/templatemo_581_kind_heart_charity/package.json",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.3.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlite"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\benke\IdeaProjects\sponsorloop\js" />
+      <recent name="C:\Users\benke\IdeaProjects\sponsorloop\.idea" />
+      <recent name="C:\Users\benke\IdeaProjects\templatemo_581_kind_heart_charity\images\scouts" />
+      <recent name="C:\Users\benke\IdeaProjects\templatemo_581_kind_heart_charity\images\icons" />
+      <recent name="C:\Users\benke\IdeaProjects\templatemo_581_kind_heart_charity" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="donate.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/templatemo_581_kind_heart_charity/donate.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.donate.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.1-openjdk-21.0.1-f644763e9732-f98dd351" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cfa32562-3e32-4149-bf92-40f96c82a90e" name="Changes" comment="" />
+      <created>1706717445885</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1706717445885</updated>
+      <workItem from="1706717446983" duration="65448000" />
+      <workItem from="1706869640375" duration="34787000" />
+      <workItem from="1706906607402" duration="56691000" />
+      <workItem from="1707137779474" duration="2669000" />
+      <workItem from="1707140502804" duration="42194000" />
+    </task>
+    <task id="LOCAL-00001" summary="verwijder node_modules">
+      <option name="closed" value="true" />
+      <created>1707138337143</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1707138337143</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="verwijder node_modules" />
+    <option name="LAST_COMMIT_MESSAGE" value="verwijder node_modules" />
+  </component>
+</project>

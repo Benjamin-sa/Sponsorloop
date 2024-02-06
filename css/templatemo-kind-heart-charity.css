@@ -331,7 +331,17 @@ p {
 
 .custom-text-box-image {
   border-radius: var(--border-radius-medium);
+  padding: 20px;
+
 }
+
+@media screen and (max-width: 600px) {
+  .custom-text-box-image {
+    padding: 5px;
+  }
+}
+
+
 
 .img-fluid.w-100 {
   border-radius: 15px; /* Pas dit aan naar de gewenste afronding */
@@ -368,29 +378,37 @@ LOGIN FORM
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   overflow: auto;
 }
-.firebaseui-idp-button.firebaseui-idp-email {
-  border-radius: 5px; /* Voeg wat randradius toe */
-  padding: 10px 20px; /* Voeg wat padding toe */
-  font-size: 16px; /* Verander de lettergrootte */
-  display: block; /* Zorgt ervoor dat de knop de volledige breedte van zijn container inneemt */
-  /* Voeg meer stijlen toe indien nodig */
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
 }
 
-.firebaseui-idp-button.firebaseui-idp-next {
-  border-radius: 5px; /* Voeg wat randradius toe */
-  padding: 10px 20px; /* Voeg wat padding toe */
-  font-size: 16px; /* Verander de lettergrootte */
-  display: block; /* Zorgt ervoor dat de knop de volledige breedte van zijn container inneemt */
-  /* Voeg meer stijlen toe indien nodig */
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
 }
 
-/* Stijl voor de "Cancel" knop */
-.firebaseui-id-submit {
-  border-radius: 5px; /* Voeg wat randradius toe */
-  padding: 10px 20px; /* Voeg wat padding toe */
-  font-size: 16px; /* Verander de lettergrootte */
-  display: block; /* Zorgt ervoor dat de knop de volledige breedte van zijn container inneemt */
-  /* Voeg meer stijlen toe indien nodig */
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 /* Pas de marge aan voor schermen kleiner dan 600px */
@@ -430,7 +448,7 @@ LOGIN FORM
 @media screen and (max-width: 600px) {
   .carousel-centered-image img {
 
-    top: 70%; /* Top positie instellen op 50% */
+    top: 60%; /* Top positie instellen op 50% */
     left: 49%; /* Left positie instellen op 50% */
     transform: translate(-50%, -50%); /* Transformeren om te centreren */
     width: 175%;
@@ -657,6 +675,59 @@ LOGIN FORM
   z-index: 1;
 }
 
+.pulsediv{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    padding: 30px;
+}
+.pulse-button {
+
+  position: relative;
+  display: block;
+  width: 400px;
+  height: 100px;
+  font-size: 1.3em;
+  text-align: center;
+  line-height: 100px;
+  letter-spacing: -1px;
+  border-radius: var(--border-radius-large);
+  color: white;
+  border: none;
+  background: #2b5622;
+  cursor: pointer;
+  box-shadow: 0 0 0 0 rgb(96, 143, 87);
+  animation: pulse 1.5s infinite;
+}
+
+.pulse-button:hover {
+  animation: none;
+}
+
+@media screen and (max-width: 600px) {
+  .pulsediv {
+    padding: 10px;
+
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.9);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 50px rgba(90, 153, 212, 0);
+  }
+  100% {
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 rgba(90, 153, 212, 0);
+  }
+}
 /*---------------------------------------
   DONATE pagina
 -----------------------------------------*/
@@ -856,6 +927,26 @@ LOGIN FORM
 }
 
 
+
+/*---------------------------------------
+  naam selectie js
+-----------------------------------------*/
+
+.selected-name {
+  border: 1px solid #000; /* Voeg een rand toe rond de geselecteerde naam */
+  padding: 5px; /* Voeg wat ruimte toe binnen de rand */
+  margin: 5px; /* Voeg wat ruimte toe buiten de rand */
+  display: inline-block; /* Zorg ervoor dat de naam en het kruisje op dezelfde regel blijven */
+}
+
+.cross {
+  margin-left: 5px; /* Voeg wat ruimte toe tussen de naam en het kruisje */
+  cursor: pointer; /* Verander de cursor naar een handje wanneer u over het kruisje beweegt */
+}
+
+.cross:hover {
+  color: red; /* Verander de kleur van het kruisje naar rood wanneer u eroverheen beweegt */
+}
 
 #page-wrapper {
   width: 640px;
@@ -1078,73 +1169,21 @@ golven
     height: inherit;
   }
 
-  .carousel:hover .carousel-control-next-icon,
-  .carousel:hover .carousel-control-prev-icon {
-    opacity: 1;
-  }
-
   #hero-slide .carousel-item {
     height: inherit;
-  }
-
-  .carousel-control-prev {
-    left: 12px;
-  }
-
-  .carousel-control-next {
-    right: 12px;
-  }
-
-
-  .cta-section::before {
-    width: 150px;
-    height: 150px;
-  }
-
-  .cta-section::after {
-    bottom: -60px;
-    width: 100px;
-    height: 100px;
   }
 
   .cta-section .row {
     padding-top: 50px;
     padding-bottom: 50px;
+
   }
-
-
-
-  #testimonial-carousel .carousel-caption {
-    padding-top: 0;
-  }
-
-  blockquote {
-    padding: 70px 30px 30px 30px;
-  }
-
-  .about-image {
-    width: inherit;
-    height: 450px;
-  }
-
-  .custom-text-box {
-    padding: 30px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-  }
-
 
 
 }
 
-@media screen and (max-width: 580px) {
-  .hero-section-full-height,
-  #hero-slide .carousel-item,
-  .carousel-image {
-    min-height: 520px;
-  }
 
-}
+
 
 @media screen and (max-width: 480px) {
   h1 {

@@ -1,103 +1,140 @@
-
-firebase.auth().onAuthStateChanged(function(user) {
-
+firebase.auth().onAuthStateChanged(user => {
     if (!user) {
-        // De gebruiker is niet ingelogd, stuur ze naar de inlogpagina
-        window.location.href = "index.html"; // vervang dit door de naam van uw inlogpagina
-    }
-
-});
-
-
-
-var customAmountInput = document.querySelector('.form-control');
-
-// Voeg een event listener toe aan het invoerveld
-customAmountInput.addEventListener('input', function() {
-    // Selecteer alle radio buttons
-    var radioButtons = document.querySelectorAll('.form-check-input');
-
-    // Loop door alle radio buttons
-    for (var i = 0; i < radioButtons.length; i++) {
-        // Deselecteer de radio button
-        radioButtons[i].checked = false;
+        window.location.href = "index.html";
     }
 });
+/*----------------------------------------------------*/
+/*   verbiedt dubbele bedragen
+/*----------------------------------------------------*/
+const customAmountInput = document.querySelector('.form-control');
+const radioButtons = document.querySelectorAll('.form-check-input');
+const db = firebase.firestore();
 
-
-document.getElementById('myForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    var amount;
-    var radios = document.getElementsByName('flexRadioDefault');
-    var userId = firebase.auth().currentUser.uid;
-
-    for (var i = 0, length = radios.length; i < length; i++) {
-        if (radios[i].checked) {
-            // get value, set checked flag or do whatever you want to
-            amount = radios[i].value;
-            break;
-        }
-    }
-
-    // Als er geen radiobutton is geselecteerd, gebruik dan de custom amount
-    if (!amount) {
-        amount = document.querySelector('input[aria-label="Username"]').value;
-    }
-
-    // Selecteer de div waar de geselecteerde namen zijn toegevoegd
-    var selectedNamesDiv = document.getElementById('geselecteerdeNamen');
-
-    // Verzamel de geselecteerde namen
-    var selectedNames = Array.from(selectedNamesDiv.children).map(function(child) {
-        return child.textContent;
+customAmountInput.addEventListener('input', () => {
+    radioButtons.forEach(radioButton => {
+        radioButton.checked = false;
     });
-
-    var db = firebase.firestore();
-
-    var data = {
-        bedrag: amount,
-        lopers: selectedNames, // upload de geselecteerde namen
-        userId: userId
-    };
-
-    db.collection("donations").add(data)
-        .then((docRef) => {
-            console.log("Document written with ID: ", docRef.id);
-        })
-        .catch((error) => {
-            console.error("Error adding document: ", error);
-        });
 });
+radioButtons.forEach(radioButton => {
+    radioButton.addEventListener('change', () => {
+        customAmountInput.value = '';
+    });
+});
+/*----------------------------------------------------*/
+/*   pop up menu
+/*----------------------------------------------------*/
 
-
-// Selecteer de submit-knop
-let submitButton = document.querySelector('button[type="submit"]');
-
-// Voeg een event listener toe aan de submit-knop
-submitButton.addEventListener('click', function(event) {
-    event.preventDefault(); // Voorkom dat het formulier wordt verzonden
-
-    // Toon de pop-up
-    let popup = document.getElementById('confirmation');
+const submitButton = document.querySelector('button[type="submit"]');
+submitButton.addEventListener('click', event => {
+    event.preventDefault();
+    const popup = document.getElementById('confirmation');
     popup.style.display = 'block';
 });
-
-// Selecteer de 'Learn More'-knop
-let learnMoreButton = document.querySelector('#confirmation .button');
-
-// Voeg een event listener toe aan de 'Learn More'-knop
-learnMoreButton.addEventListener('click', function() {
-    // Verzend de gegevens naar de server
-    // ...
+const closeButton = document.querySelector('#confirmation .close-button');
+closeButton.addEventListener('click', () => {
+    const popup = document.getElementById('confirmation');
+    popup.style.display = 'none';
 });
 
-// Selecteer de 'close'-knop
-let closeButton = document.querySelector('#confirmation .close-button');
 
-// Voeg een event listener toe aan de 'close'-knop
-closeButton.addEventListener('click', function() {
-    // Verberg de pop-up
-    let popup = document.getElementById('confirmation');
-    popup.style.display = 'none';
+/*----------------------------------------------------*/
+/*  de big boy functies
+/*----------------------------------------------------*/
+
+let parsedData = null;
+
+// Functie om de CSV-gegevens op te halen en te verwerken
+async function parseCsvData() {
+    const response = await fetch('js/ledenlijst.csv');
+    const data = await response.text();
+    parsedData = Papa.parse(data, { header: true, dynamicTyping: true, delimiter: ",", skipEmptyLines: true }).data;
+}
+
+
+// Functie om de overeenkomende 'Takken' waarde te vinden voor een gegeven naam
+function findMatchingTak(name) {
+    let matchingRow = parsedData.find(row => row['Naam'] === name);
+    return matchingRow ? matchingRow['Takken'] : alert('Geen tak gevonden voor ' + name);
+}
+
+
+// Functie om de geselecteerde namen op te halen
+function getSelectedNames() {
+    const selectedNamesDiv = document.getElementById('geselecteerdeNamen');
+    return Array.from(selectedNamesDiv.children).map(child => child.textContent.slice(0, -1));
+}
+
+
+
+// Functie om het geselecteerde bedrag op te halen
+function getSelectedAmount() {
+    const radios = document.getElementsByName('flexRadioDefault');
+    for (let i = 0, length = radios.length; i < length; i++) {
+        if (radios[i].checked) {
+            return radios[i].value;
+        }
+    }
+    return document.querySelector('input[aria-label="hoeveelheid"]').value;
+}
+
+const confirmatie = document.getElementById('confirmation');
+confirmatie.addEventListener('click', async () => {
+    if (!parsedData) {
+        await parseCsvData();
+    }
+
+    const username = firebase.auth().currentUser.displayName;
+    const email = firebase.auth().currentUser.email;
+    const amount = getSelectedAmount();
+    const selectedNames = getSelectedNames();
+
+    for (let name of selectedNames) {
+        let tak = findMatchingTak(name);
+        if (tak) {
+            let donateurRef = db.collection('Donateurs').doc(username);
+
+            donateurRef.set({
+                Naam: username,
+                Email: email
+            }, { merge: true });
+
+            donateurRef.collection('Sponsoring').doc().set({
+                LidID: name,
+                Bedrag: amount
+            });
+
+            let lidRef = db.collection('Leden').doc(name);
+
+            lidRef.set({
+                Naam: name,
+                Tak: tak
+            }, { merge: true });
+
+            lidRef.collection('OntvangenDonaties').doc().set({
+                DonateurID: username,
+                Bedrag: amount
+            }).then(() => {
+                // Update het 'TotaalGesponsord' veld
+                lidRef.update({
+
+                    TotaalGesponsord: firebase.firestore.FieldValue.increment(amount)
+                }).then(() => {
+
+                    alert("De donatie is succesvol verwerkt");
+                    window.location.href = "index.html";
+                }).catch((error) => {
+
+                    console.error("Error writing document: ", error);
+                    // Controleer of de fout te maken heeft met quota overschrijding
+                    if (error.code === 'resource-exhausted') {
+                        alert('Limiet is vandaaag bereikt, probeer het morgen opnieuw');
+                    } else {
+                        alert('Er is een fout opgetreden bij het schrijven van de gegevens');
+                    }
+                });
+            }).catch((error) => {
+                console.error("Error writing document: ", error);
+            });
+        }
+    }
 });

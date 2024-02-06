@@ -1,5 +1,3 @@
-
-
 //laad scherm prul
 window.addEventListener('load', function() {
     setTimeout(function() {
@@ -14,7 +12,7 @@ window.addEventListener('load', function() {
     }, 500); // Vertraging van halve seconde
 });
 
-
+// center image laten bewegen
 window.addEventListener('scroll', function() {
     // Bepaal hoe ver de gebruiker heeft gescrold
     var scroll = window.pageYOffset;
@@ -38,8 +36,6 @@ window.addEventListener('scroll', function() {
         isAnimating = false;
     }
 });
-
-
 
 //login menu
 firebase.auth().onAuthStateChanged(function(user) {
@@ -69,9 +65,6 @@ firebase.auth().onAuthStateChanged(function(user) {
     }
 });
 
-
-
-
 // Selecteer alle divs die u wilt animeren
 const divs = document.querySelectorAll('.timeline-2, .custom-text-box, .custom-text-box-image');
 
@@ -94,5 +87,25 @@ divs.forEach(div => {
     observer.observe(div);
 });
 
+// close button en sponsor knop laten werken
+document.addEventListener('DOMContentLoaded', function() {
+    var closeButton = document.querySelector('.close-button');
+    var loginForm = document.querySelector('#loginForm');
+    var pulseButton = document.querySelector('.pulse-button');
 
+    closeButton.addEventListener('click', function() {
+        loginForm.style.display = 'none';
+    });
 
+    pulseButton.addEventListener('click', function() {
+        var user = firebase.auth().currentUser;
+
+        if (user) {
+            // Gebruiker is ingelogd, leidt om naar donate.html
+            window.location.href = 'donate.html';
+        } else {
+            // Gebruiker is niet ingelogd, toon het inlogformulier
+            loginForm.style.display = 'block';
+        }
+    });
+});
