@@ -440,12 +440,12 @@ LOGIN FORM
 }
 
 .carousel-item img {
-  filter: blur(2px);
+  filter: blur(3px);
 }
 
 .carousel-centered-image img{
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
@@ -516,6 +516,7 @@ LOGIN FORM
   position: relative;
   background-color: #f0f0f0;
   z-index: 1;
+  padding-top: 30px;
 }
 
 
@@ -594,28 +595,12 @@ LOGIN FORM
   position: relative;
   background-color: #f0f0f0;
   z-index: 1;
+  box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.1);
 }
 
 .main-timeline-2 {
   position: relative;
 
-}
-.overlay-div {
-  Z-index: 1;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.2); /* Zwart met 50% transparantie */
-}
-
-.overlay-content {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-}
-
-.overlay-links, .overlay-date, .overlay-socials {
-  color: white;
 }
 
 /* The actual timeline (the vertical ruler) */

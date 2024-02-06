@@ -12,13 +12,24 @@ window.addEventListener('load', function() {
     }, 500); // Vertraging van halve seconde
 });
 
+$(window).on('scroll', function() {
+    var scrollTop = $(this).scrollTop();
+    var rotationAngle = -scrollTop / 10; // Pas de deler aan om de rotatiesnelheid te wijzigen
+
+    $('.carousel-item, .carousel-foto-center, #section2').css({
+        'transform': 'rotateX(' + rotationAngle + 'deg)',
+        'transform-origin': 'bottom center',
+        'position': 'static'
+    });
+});
+
 // center image laten bewegen
 window.addEventListener('scroll', function() {
     // Bepaal hoe ver de gebruiker heeft gescrold
     var scroll = window.pageYOffset;
 
     // Bepaal de schaal van de afbeelding op basis van de scroll positie
-    var scale = Math.min(1 + scroll / 1000, 1.5);
+    var scale = Math.min(1 + scroll / 1500, 1.5);
 
     // Selecteer de afbeelding
     var img = document.querySelector('.carousel-centered-image img');
