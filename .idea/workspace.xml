@@ -10,9 +10,7 @@
     <list default="true" id="cfa32562-3e32-4149-bf92-40f96c82a90e" name="Changes" comment="responsive update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/templatemo-kind-heart-charity.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/templatemo-kind-heart-charity.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/donate.html" beforeDir="false" afterPath="$PROJECT_DIR$/donate.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/csvophalen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/csvophalen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/dataOphalen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/dataOphalen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +113,7 @@
       <workItem from="1706906607402" duration="56691000" />
       <workItem from="1707137779474" duration="2669000" />
       <workItem from="1707140502804" duration="53063000" />
-      <workItem from="1707227873460" duration="17280000" />
+      <workItem from="1707227873460" duration="21746000" />
     </task>
     <task id="LOCAL-00001" summary="verwijder node_modules">
       <option name="closed" value="true" />
@@ -157,7 +155,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707245608409</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="responsive update">
+      <option name="closed" value="true" />
+      <created>1707246816923</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1707246816923</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
