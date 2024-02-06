@@ -1,12 +1,17 @@
 {
+  "name": "sponsorloop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
     "csv-parser": "^3.0.0",
     "firebase": "^10.7.2",
     "firebase-admin": "^12.0.0",
     "firebaseui": "^6.1.0",
-    "jquery": "^3.7.1"
-  },
-  "scripts": {
-    "start": "node server.js"
+    "jquery": "^3.7.1",
+    "serve-favicon": "^2.5.0"
   }
 }

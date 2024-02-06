@@ -8,19 +8,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cfa32562-3e32-4149-bf92-40f96c82a90e" name="Changes" comment="verwijder node_modules">
-      <change afterPath="$PROJECT_DIR$/js/csvophalen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sponsorloop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sponsorloop.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/templatemo-kind-heart-charity.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/templatemo-kind-heart-charity.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/donate.html" beforeDir="false" afterPath="$PROJECT_DIR$/donate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/counter.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/counter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/dataOphalen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/dataOphalen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/donatie.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/donatie.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/firebaseInitalisatie.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/firebaseInitalisatie.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/ledenlijst.csv" beforeDir="false" afterPath="$PROJECT_DIR$/js/ledenlijst.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/loginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/loginPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
@@ -73,6 +64,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "editing.templates",
     "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.3.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   },
@@ -84,11 +76,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\benke\IdeaProjects\sponsorloop" />
       <recent name="C:\Users\benke\IdeaProjects\sponsorloop\js" />
       <recent name="C:\Users\benke\IdeaProjects\sponsorloop\.idea" />
       <recent name="C:\Users\benke\IdeaProjects\templatemo_581_kind_heart_charity\images\scouts" />
       <recent name="C:\Users\benke\IdeaProjects\templatemo_581_kind_heart_charity\images\icons" />
-      <recent name="C:\Users\benke\IdeaProjects\templatemo_581_kind_heart_charity" />
     </key>
   </component>
   <component name="RunManager">
@@ -120,7 +112,7 @@
       <workItem from="1706869640375" duration="34787000" />
       <workItem from="1706906607402" duration="56691000" />
       <workItem from="1707137779474" duration="2669000" />
-      <workItem from="1707140502804" duration="42194000" />
+      <workItem from="1707140502804" duration="48451000" />
     </task>
     <task id="LOCAL-00001" summary="verwijder node_modules">
       <option name="closed" value="true" />
