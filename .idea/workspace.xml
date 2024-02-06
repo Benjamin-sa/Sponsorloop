@@ -7,13 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cfa32562-3e32-4149-bf92-40f96c82a90e" name="Changes" comment="verwijder node_modules">
+    <list default="true" id="cfa32562-3e32-4149-bf92-40f96c82a90e" name="Changes" comment="css responsve">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/templatemo-kind-heart-charity.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/templatemo-kind-heart-charity.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/firebaseInitalisatie.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/firebaseInitalisatie.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +25,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -112,7 +110,7 @@
       <workItem from="1706869640375" duration="34787000" />
       <workItem from="1706906607402" duration="56691000" />
       <workItem from="1707137779474" duration="2669000" />
-      <workItem from="1707140502804" duration="48451000" />
+      <workItem from="1707140502804" duration="52611000" />
     </task>
     <task id="LOCAL-00001" summary="verwijder node_modules">
       <option name="closed" value="true" />
@@ -122,7 +120,23 @@
       <option name="project" value="LOCAL" />
       <updated>1707138337143</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="verwijder node_modules">
+      <option name="closed" value="true" />
+      <created>1707223829315</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1707223829315</updated>
+    </task>
+    <task id="LOCAL-00003" summary="css responsve">
+      <option name="closed" value="true" />
+      <created>1707227202340</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1707227202341</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,7 +166,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="c" />
     <MESSAGE value="verwijder node_modules" />
-    <option name="LAST_COMMIT_MESSAGE" value="verwijder node_modules" />
+    <MESSAGE value="css responsve" />
+    <option name="LAST_COMMIT_MESSAGE" value="css responsve" />
   </component>
 </project>

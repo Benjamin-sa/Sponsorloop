@@ -291,9 +291,6 @@ p {
 
 
 
-
-
-
 /*---------------------------------------
   CUSTOM ICON COLOR
 -----------------------------------------*/
@@ -329,15 +326,22 @@ p {
   padding: 40px;
 }
 
+
+
 .custom-text-box-image {
   border-radius: var(--border-radius-medium);
-  padding: 20px;
+  padding: 15px;
 
 }
 
 @media screen and (max-width: 600px) {
   .custom-text-box-image {
     padding: 5px;
+  }
+
+  .custom-text-box{
+    padding: 20px;
+    margin: 10px;
   }
 }
 
@@ -448,7 +452,7 @@ LOGIN FORM
 @media screen and (max-width: 600px) {
   .carousel-centered-image img {
 
-    top: 60%; /* Top positie instellen op 50% */
+    top: 50%; /* Top positie instellen op 50% */
     left: 49%; /* Left positie instellen op 50% */
     transform: translate(-50%, -50%); /* Transformeren om te centreren */
     width: 175%;
@@ -468,7 +472,7 @@ LOGIN FORM
 .arrow-circle {
   position: absolute;
   bottom: 10px;
-  top: 90%;
+  top: 80%;
   left: 50%;
   transform: translateX(-50%);
   width: 75px;
@@ -1051,6 +1055,7 @@ golven
   height: 100%;
   position: relative;
   z-index: 3;
+  background-color: #f0f0f0;
 
   .parallax > use {
     animation: waveAnimateB 14s linear infinite;
