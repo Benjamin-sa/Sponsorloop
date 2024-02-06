@@ -46,11 +46,7 @@ document.getElementById('Goed').addEventListener('click', function() {
 
 function toonGesponsordeLeden(gesponsordeLeden) {
     let table = document.createElement('table');
-
-    // stijl tabel
-    table.style.border = '2px solid black';
-    table.style.borderCollapse = 'collapse';
-    table.style.width = '90vw';
+        table.id = 'gesponsordeNamenTabel';
 
     let gesponsordeNamenDiv = document.getElementById('gesponsordeNamen');
     gesponsordeNamenDiv.appendChild(table);

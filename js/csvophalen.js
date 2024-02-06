@@ -5,13 +5,21 @@ fetch('js/ledenlijst.csv')
         // Parse de CSV data
         let parsedData = Papa.parse(data, {header: true}).data;
 
-        // Haal de unieke 'Takken' uit de CSV-gegevens
-        let takken = [...new Set(parsedData.map(row => row['Takken']))];
-
         // Selecteer de 'Tak' dropdown
         let takDropdown = document.getElementById('tak-dropdown');
 
-        // Loop door elke 'Tak'
+// Maak een default optie
+        let defaultOption = document.createElement('option');
+        defaultOption.textContent = 'Selecteer een tak...';
+        defaultOption.selected = true;
+
+// Voeg de default optie toe aan de 'Tak' dropdown
+        takDropdown.appendChild(defaultOption);
+
+// Haal de unieke 'Takken' uit de CSV-gegevens
+        let takken = [...new Set(parsedData.map(row => row['Takken']))];
+
+// Loop door elke 'Tak'
         for (let tak of takken) {
             // Maak een nieuwe optie
             let option = document.createElement('option');
@@ -26,6 +34,8 @@ fetch('js/ledenlijst.csv')
 
         // Voeg een event listener toe aan de 'Tak' dropdown
         takDropdown.addEventListener('change', function() {
+
+
             // Verkrijg de geselecteerde 'Tak'
             let selectedTak = this.value;
 
