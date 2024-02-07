@@ -14,29 +14,33 @@ window.addEventListener('load', function() {
 
 
 
+var lastScrollTop = 0;
+var ticking = false;
 
-// Selecteer de hero-sectie eenmaal buiten de event listener
-var heroSection = document.querySelector('.hero-section');
+function doSomething(scroll_pos) {
+    $(".hero-section").css({
+        transform: 'translate3d(0, -'+(scroll_pos/100)+'%, 0)'
+    });
 
-heroSection.style.transform = 'translate'
+    $(".hero-title").css({
+        transform: 'translate3d(0, '+scroll_pos/70+'%, 0)'
+    });
 
-// Maak een functie voor de scroll event handler
-function handleScroll() {
-    // Bepaal hoe ver de gebruiker heeft gescrold
-    var scroll = window.pageYOffset;
-
-    // Bepaal de translatie van de hero-sectie op basis van de scroll positie
-    var translateY = scroll * 0.4; // Pas deze waarde aan om de snelheid van het parallax effect te wijzigen
-
-    // Pas de translatie van de hero-sectie aan
-    heroSection.style.transform = 'translateY(' + translateY + 'px)';
+    $(".hero-subtitle").css({
+        transform: 'translate3d(0, '+scroll_pos/30+'%, 0)'
+    });
 }
 
-// Gebruik requestAnimationFrame voor de scroll event handler
-window.addEventListener('scroll', function() {
-    requestAnimationFrame(handleScroll);
+window.addEventListener('scroll', function(e) {
+    lastScrollTop = window.scrollY;
+    if (!ticking) {
+        window.requestAnimationFrame(function() {
+            doSomething(lastScrollTop);
+            ticking = false;
+        });
+        ticking = true;
+    }
 });
-
 //login menu
 firebase.auth().onAuthStateChanged(function(user) {
     var followDiv = document.querySelector('.follow');
@@ -109,3 +113,5 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+
