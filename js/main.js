@@ -14,32 +14,59 @@ window.addEventListener('load', function() {
 
 
 
-var lastScrollTop = 0;
-var ticking = false;
+document.body.style.overflow = 'hidden';
+document.querySelector('.arrow-circle').addEventListener('click', function() {
 
-function doSomething(scroll_pos) {
+
+        // Start de animatie
+        $(".hero-section").css({
+            transform: 'translateY(-15vh)',
+            transition: 'transform 2s'  // Voeg een vloeiende overgang toe
+        });
+
+        $(".hero-title").css({
+            transform: 'translateY(15vh)',
+            transition: 'transform 2s'
+        });
+
+        $(".hero-subtitle").css({
+            transform: 'translateY(30vh)',
+            transition: 'transform 2s'
+        });
+
+        // Trek sectie 2 langzaam omhoog
+        $("#section_2").css({
+            transform: 'translateY(-100vh)',
+            transition: 'transform 2s'
+        });
+
+        document.body.style.overflow = 'auto';
+});
+document.getElementById('resetButton').addEventListener('click', function() {
+    hasScrolled = false;
+
     $(".hero-section").css({
-        transform: 'translate3d(0, -'+(scroll_pos/100)+'%, 0)'
+        transform: 'translateY(0)',
+        transition: 'transform 2s'
     });
 
     $(".hero-title").css({
-        transform: 'translate3d(0, '+scroll_pos/70+'%, 0)'
+        transform: 'translateY(0)',
+        transition: 'transform 2s'
     });
 
     $(".hero-subtitle").css({
-        transform: 'translate3d(0, '+scroll_pos/30+'%, 0)'
+        transform: 'translateY(0)',
+        transition: 'transform 2s'
     });
-}
 
-window.addEventListener('scroll', function(e) {
-    lastScrollTop = window.scrollY;
-    if (!ticking) {
-        window.requestAnimationFrame(function() {
-            doSomething(lastScrollTop);
-            ticking = false;
-        });
-        ticking = true;
-    }
+    $("#section_2").css({
+        transform: 'translateY(0)',
+        transition: 'transform 2s'
+    });
+
+    document.body.style.overflow = 'hidden';
+
 });
 //login menu
 firebase.auth().onAuthStateChanged(function(user) {
