@@ -12,36 +12,82 @@ window.addEventListener('load', function() {
     }, 500); // Vertraging van halve seconde
 });
 
-
-
-document.body.style.overflow = 'hidden';
-document.querySelector('.arrow-circle').addEventListener('click', function() {
-
-
-        // Start de animatie
-        $(".hero-section").css({
-            transform: 'translateY(-15vh)',
-            transition: 'transform 2s'  // Voeg een vloeiende overgang toe
-        });
-
-        $(".hero-title").css({
-            transform: 'translateY(15vh)',
-            transition: 'transform 2s'
-        });
-
-        $(".hero-subtitle").css({
-            transform: 'translateY(30vh)',
-            transition: 'transform 2s'
-        });
-
-        // Trek sectie 2 langzaam omhoog
-        $("#section_2").css({
-            transform: 'translateY(-100vh)',
-            transition: 'transform 2s'
-        });
-
-        document.body.style.overflow = 'auto';
+let animation = lottie.loadAnimation({
+    container: document.getElementById('lottie-animation'), // het DOM-element waar de animatie wordt geladen
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: 'images/animatie/icons8-chevron.json' // het pad naar de JSON-animatiebestand
 });
+
+
+
+// Functie om de animatie te starten
+function startAnimation() {
+    $(".hero-section").css({
+        transform: 'translateY(-15vh)',
+        transition: 'transform 2s'
+    });
+
+    $(".hero-title").css({
+        transform: 'translateY(15vh)',
+        transition: 'transform 2s'
+    });
+
+    $(".hero-subtitle").css({
+        transform: 'translateY(30vh)',
+        transition: 'transform 2s'
+    });
+
+    $("#section_2").css({
+        transform: 'translateY(-100vh)',
+        transition: 'transform 2s'
+    });
+
+    document.body.style.overflow = 'auto';
+}
+
+function handleScrollAndTouch() {
+    // Voeg event listeners toe voor touchstart, touchend en touchmove
+    document.addEventListener('touchstart', function(e) {
+        touchStartY = e.changedTouches[0].screenY;
+    }, false);
+
+    document.addEventListener('touchend', function(e) {
+        touchEndY = e.changedTouches[0].screenY;
+        handleSwipe();
+    }, false);
+
+    document.addEventListener('touchmove', function(e) {
+        if (document.body.style.overflow === 'hidden') {
+            console.log('Scroll gedetecteerd terwijl overflow op hidden is ingesteld');
+        }
+    });
+
+    // Voeg een event listener toe voor het scroll event
+    window.addEventListener('scroll', function() {
+        if ($(window).scrollTop() > 0 && $("#section_2").css('transform') !== 'translateY(-100vh)') {
+            startAnimation();
+        }
+    });
+
+    // Functie om de swipe te verwerken
+    function handleSwipe() {
+        if (touchEndY < touchStartY) {
+            startAnimation();
+        }
+    }
+}
+
+// Roep de functie aan
+handleScrollAndTouch();
+
+var button = document.getElementById('lottie-animation'); // Vervang 'yourButtonId' door het daadwerkelijke id van uw knop
+button.addEventListener('click', function() {
+    // Start de animatie
+    startAnimation();
+});
+
 document.getElementById('resetButton').addEventListener('click', function() {
     hasScrolled = false;
 
