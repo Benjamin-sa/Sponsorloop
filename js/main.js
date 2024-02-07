@@ -12,45 +12,29 @@ window.addEventListener('load', function() {
     }, 500); // Vertraging van halve seconde
 });
 
-var scrollTop, rotationAngle;
 
-function animate() {
-    scrollTop = $(window).scrollTop();
-    rotationAngle = -scrollTop / 10; // Pas de deler aan om de rotatiesnelheid te wijzigen
 
-    $('.carousel-item, .carousel-foto-center, #section2').css({
-        'transform': 'rotateX(' + rotationAngle + 'deg)',
-        'transform-origin': 'bottom center',
-    });
 
-    requestAnimationFrame(animate);
-}
+// Selecteer de hero-sectie eenmaal buiten de event listener
+var heroSection = document.querySelector('.hero-section');
 
-animate();
+heroSection.style.transform = 'translate'
 
-// center image laten bewegen
-window.addEventListener('scroll', function() {
+// Maak een functie voor de scroll event handler
+function handleScroll() {
     // Bepaal hoe ver de gebruiker heeft gescrold
     var scroll = window.pageYOffset;
 
-    // Bepaal de schaal van de afbeelding op basis van de scroll positie
-    var scale = Math.min(1 + scroll / 2500, 1.5);
+    // Bepaal de translatie van de hero-sectie op basis van de scroll positie
+    var translateY = scroll * 0.4; // Pas deze waarde aan om de snelheid van het parallax effect te wijzigen
 
-    // Selecteer de afbeelding
-    var img = document.querySelector('.carousel-centered-image img');
+    // Pas de translatie van de hero-sectie aan
+    heroSection.style.transform = 'translateY(' + translateY + 'px)';
+}
 
-    // Pas de schaal van de afbeelding aan
-    img.style.transform = 'translate(-50%, -50%) scale(' + scale + ')';
-
-    // Controleer of de afbeelding gedeeltelijk zichtbaar is in de viewport
-    var rect = img.getBoundingClientRect();
-    if (rect.top < window.innerHeight && rect.bottom > 0) {
-        // De afbeelding is gedeeltelijk zichtbaar in de viewport, start de animatie
-        isAnimating = true;
-    } else {
-        // De afbeelding is niet zichtbaar in de viewport, de animatie is afgelopen
-        isAnimating = false;
-    }
+// Gebruik requestAnimationFrame voor de scroll event handler
+window.addEventListener('scroll', function() {
+    requestAnimationFrame(handleScroll);
 });
 
 //login menu

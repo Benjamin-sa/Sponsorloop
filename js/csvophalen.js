@@ -42,13 +42,17 @@ fetch('js/ledenlijst.csv')
             // Filter de CSV-gegevens op basis van de geselecteerde 'Tak'
             let filteredData = parsedData.filter(row => row['Takken'] === selectedTak);
 
-            console.log(filteredData);
             // Selecteer de 'Naam' dropdown
             let naamDropdown = document.getElementById('naam-dropdown');
 
             // Verwijder alle bestaande opties
             naamDropdown.innerHTML = '';
 
+            let defaultOption = document.createElement('option');
+            defaultOption.textContent = 'Selecteer een Lid...';
+            defaultOption.selected = true;
+
+            naamDropdown.appendChild(defaultOption);
             // Loop door elke rij in de gefilterde gegevens
             for (let row of filteredData) {
                 // Maak een nieuwe optie
