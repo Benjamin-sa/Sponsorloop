@@ -13,7 +13,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         .then((userCredential) => {
             // De gebruiker is ingelogd
             var user = userCredential.user;
-            window.location.href = "index.html";
+            window.location.href = "donate.html";
         })
         .catch((error) => {
             var errorCode = error.code;

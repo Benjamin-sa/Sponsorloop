@@ -421,7 +421,7 @@ justify-content: center;
   width: 110%;
   height: 110%;
   background: inherit;
-  filter: blur(3px) brightness(0.3);
+  filter: blur(3px) brightness(0.4);
   z-index: -1;
 }
 
