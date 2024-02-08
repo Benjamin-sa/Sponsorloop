@@ -494,16 +494,6 @@ justify-content: center;
   ABOUT SECTION
 -----------------------------------------*/
 
-
-.img-fluid {
-  transition: transform 0.2s; /* Animatie */
-}
-
-.img-fluid:hover {
-  transform: scale(1.1); /* Vergroot de afbeelding */
-}
-
-
 #section_2{
   position: relative;
   top: 100vh;
@@ -600,6 +590,7 @@ justify-content: center;
   left: 50%;
   margin-left: -3px;
 }
+
 .card-img-top {
     object-fit: cover;
 }

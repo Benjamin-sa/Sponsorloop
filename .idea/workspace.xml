@@ -8,7 +8,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cfa32562-3e32-4149-bf92-40f96c82a90e" name="Changes" comment="hero-section update">
+      <change afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/templatemo-kind-heart-charity.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/templatemo-kind-heart-charity.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +120,7 @@
       <workItem from="1707140502804" duration="53063000" />
       <workItem from="1707227873460" duration="35642000" />
       <workItem from="1707305257309" duration="30618000" />
-      <workItem from="1707383071888" duration="31129000" />
+      <workItem from="1707383071888" duration="32451000" />
     </task>
     <task id="LOCAL-00001" summary="verwijder node_modules">
       <option name="closed" value="true" />
@@ -294,7 +298,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707415505520</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="hero-section update">
+      <option name="closed" value="true" />
+      <created>1707415865432</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1707415865432</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
