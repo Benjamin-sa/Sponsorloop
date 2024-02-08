@@ -21,6 +21,22 @@ let animation = lottie.loadAnimation({
 });
 
 
+document.addEventListener('DOMContentLoaded', function() {
+    const movementStrength = 500;
+    const height = movementStrength / window.innerHeight;
+    const width = movementStrength / window.innerWidth;
+    const heroSection = document.querySelector('.hero-section');
+    const heroTitle = document.querySelector('.hero-title');
+
+    heroSection.addEventListener('mousemove', function(e) {
+        const pageX = e.pageX - (window.innerWidth / 2);
+        const pageY = e.pageY - (window.innerHeight / 2);
+        const newvalueX = width * pageX * -1 - 25;
+        const newvalueY = height * pageY * -1 - 50;
+        heroTitle.style.backgroundPosition = `${newvalueX}px ${newvalueY}px`;
+    });
+});
+
 
 // Functie om de animatie te starten
 function startAnimation() {
@@ -114,35 +130,45 @@ document.getElementById('resetButton').addEventListener('click', function() {
     document.body.style.overflow = 'hidden';
 
 });
-//login menu
-firebase.auth().onAuthStateChanged(function(user) {
+
+// ingelogde gebruiker
+function handleLoggedInUser(user) {
     var followDiv = document.querySelector('.follow');
+    var displayName = user.displayName;
+    followDiv.innerHTML = `<a>${displayName}</a> | <a id="logoutKnop">Uitloggen</a>`;
+
+    document.getElementById('logoutKnop').addEventListener('click', function() {
+        firebase.auth().signOut().then(function() {
+            // Sign out successful
+        }).catch(function(error) {
+            alert('Er is iets misgegaan bij het uitloggen. contacteer benjamin.sautesb@gmail.com');
+        });
+    });
+}
+
+
+// uitgelogde gebruiker
+function handleLoggedOutUser() {
+    var followDiv = document.querySelector('.follow');
+    followDiv.innerHTML = '<a id="loginKnop">Inloggen</a>';
+
+    document.getElementById('loginKnop').addEventListener('click', function() {
+        document.getElementById('loginForm').style.display = 'block';
+    });
+}
+
+// Controleer of de gebruiker is ingelogd
+firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-        // De gebruiker is ingelogd.
-        var displayName = user.displayName;
-        followDiv.innerHTML = `<a>${displayName}</a> | <a id="logoutKnop">Uitloggen</a>`;
-
-        // Voeg een event listener toe aan de "Uitloggen" link
-        document.getElementById('logoutKnop').addEventListener('click', function() {
-            firebase.auth().signOut().then(function() {
-                // Uitloggen was succesvol
-            }).catch(function(error) {
-                alert('Er is iets misgegaan bij het uitloggen. contacteer benjamin.sautesb@gmail.com');
-            });
-        });
+        handleLoggedInUser(user);
     } else {
-        // Geen gebruiker is ingelogd.
-        followDiv.innerHTML = '<a id="loginKnop">Inloggen</a>';
-
-        // Voeg een event listener toe aan de "Inloggen" link
-        document.getElementById('loginKnop').addEventListener('click', function() {
-            // Wijzig de display eigenschap van de loginForm naar "block"
-            document.getElementById('loginForm').style.display = 'block';
-        });
+        handleLoggedOutUser();
     }
 });
 
-// Selecteer alle divs die u wilt animeren
+
+
+
 const divs = document.querySelectorAll('.timeline-2, .custom-text-box, .custom-text-box-image');
 
 // Maak een nieuwe Intersection Observer aan

@@ -1,22 +1,30 @@
 
-
 document.getElementById('download').addEventListener('click', function() {
-
-    // Controleer of de gegevens al in de cache staan
-    let gesponsordeLeden = JSON.parse(localStorage.getItem('gesponsordeLeden'));
-    if (gesponsordeLeden) {
-        // Gebruik de gecachte gegevens
-        toonGesponsordeLeden(gesponsordeLeden);
-        console.log("Gegevens uit de cache gebruikt");
+    let bestaandeTabel = document.getElementById('gesponsordeNamenTabel');
+    if (bestaandeTabel) {
+        if (bestaandeTabel.style.display === 'none') {
+            // Als de tabel verborgen is, toon deze
+            bestaandeTabel.style.display = '';
+        } else {
+            // Als de tabel zichtbaar is, verberg deze
+            bestaandeTabel.style.display = 'none';
+        }
     } else {
-        // Haal de gegevens op en sla ze op in de cache
-        haalGesponsordeLedenOp().then(gesponsordeLeden => {
-            localStorage.setItem('gesponsordeLeden', JSON.stringify(gesponsordeLeden));
+        // Controleer of de gegevens al in de cache staan
+        let gesponsordeLeden = JSON.parse(localStorage.getItem('gesponsordeLeden'));
+        if (gesponsordeLeden) {
+            // Gebruik de gecachte gegevens
             toonGesponsordeLeden(gesponsordeLeden);
-        });
+            console.log("Gegevens uit de cache gebruikt");
+        } else {
+            // Haal de gegevens op en sla ze op in de cache
+            haalGesponsordeLedenOp().then(gesponsordeLeden => {
+                localStorage.setItem('gesponsordeLeden', JSON.stringify(gesponsordeLeden));
+                toonGesponsordeLeden(gesponsordeLeden);
+            });
+        }
     }
 });
-
 
 document.getElementById('Goed').addEventListener('click', function() {
     // Verwijder de gecachte gegevens
@@ -45,8 +53,15 @@ document.getElementById('Goed').addEventListener('click', function() {
 }
 
 function toonGesponsordeLeden(gesponsordeLeden) {
+    // Controleer of de tabel al bestaat
+    let bestaandeTabel = document.getElementById('gesponsordeNamenTabel');
+    if (bestaandeTabel) {
+        // Verwijder de bestaande tabel
+        bestaandeTabel.remove();
+    }
     let table = document.createElement('table');
         table.id = 'gesponsordeNamenTabel';
+        table.className = 'rwd-table';
 
     let gesponsordeNamenDiv = document.getElementById('gesponsordeNamen');
     gesponsordeNamenDiv.appendChild(table);
@@ -55,14 +70,6 @@ function toonGesponsordeLeden(gesponsordeLeden) {
     let headerRow = document.createElement('tr');
     let headerNaam = document.createElement('th');
     let headerBedrag = document.createElement('th');
-
-    // stijl hoofd
-    headerRow.style.border = '1px solid black';
-    headerNaam.style.padding = '10px';
-    headerBedrag.style.padding = '10px';
-    headerNaam.style.backgroundColor = '#ffffff'; // light grey background
-    headerBedrag.style.backgroundColor = '#ffffff'; // light grey background
-
 
     // vul hoofd
     headerNaam.textContent = 'Naam';
@@ -82,13 +89,7 @@ function toonGesponsordeLeden(gesponsordeLeden) {
                     let cellNaam = document.createElement('td');
                     let cellBedrag = document.createElement('td');
 
-                    // stijl rij
-                    row.style.border = '1px solid black';
-                    cellNaam.style.padding = '10px';
-                    cellBedrag.style.padding = '10px';
-                    cellNaam.style.backgroundColor = '#ffffff'; // light grey background
-                    cellBedrag.style.backgroundColor = '#ffffff'; // light grey background
-
+                    // vul rij
                     cellNaam.textContent = lidData.Naam;
                     cellBedrag.textContent = lid.gesponsordBedrag;
                     row.appendChild(cellNaam);

@@ -92,9 +92,9 @@ https://templatemo.com/tm-581-kind-heart-charity
 
 body {
   font-family: var(--body-font-family);
-  background-color: #295e15;
 }
 
+.hidden{}
 
 /*---------------------------------------
   TYPOGRAPHY               
@@ -442,11 +442,19 @@ justify-content: center;
   background: transparent;
   position: relative;
   animation: text 2.5s 1;
+
+
 }
+
+
 .hero-title {
   font-weight: 1000;
   font-size: 12vw;
-    color: #fff;
+  color: white;
+
+  background:     url(/images/animatie/text.jpg) repeat;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 
 }
 .hero-subtitle {
@@ -501,7 +509,6 @@ justify-content: center;
 #section_2{
   position: relative;
   top: 100vh;
-  background-color: #f0f0f0;
   padding-top: 50px;
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
@@ -908,18 +915,50 @@ justify-content: center;
 }
 
 .naamTabel{
+  padding: 10px;
+  gap: 20px;
+  width: 500px;
+}
+
+
+.rwd-table {
+  background: #646464;
+  color: #fff;
+  border-radius: .4em;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-collapse: collapse;
-  padding: 10px;
-  gap: 20px;
+  text-align: start;
+  margin-top: 10px;
 }
 
-.gesponsordeNamenTabel{
-  width: 100%;
+.rwd-table tr {
+  border-color: #354A5F; /* 10% lichter dan #34495E */
+  font-weight: bold;
+  font-size: large;
+
 }
 
+.rwd-table th, .rwd-table td {
+  margin: 10px 40px;
+  font-weight: bold;
+  font-size: large;
+  padding: 1em;
+}
+
+
+@media (min-width: 600px) { /* Vervang 600px door uw gewenste breakpoint */
+  .rwd-table th, .rwd-table td {
+    padding: 1em !important;
+    width: auto;
+
+
+  }
+}
+
+.rwd-table th, .rwd-table td:before {
+  color: #2b5622;
+}
 
 
 
