@@ -8,12 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cfa32562-3e32-4149-bf92-40f96c82a90e" name="Changes" comment="hero-section update">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/templatemo-kind-heart-charity.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/templatemo-kind-heart-charity.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/donate.html" beforeDir="false" afterPath="$PROJECT_DIR$/donate.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/dataOphalen.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/dataOphalen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/loginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/loginPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +116,7 @@
       <workItem from="1707140502804" duration="53063000" />
       <workItem from="1707227873460" duration="35642000" />
       <workItem from="1707305257309" duration="30618000" />
-      <workItem from="1707383071888" duration="30715000" />
+      <workItem from="1707383071888" duration="31129000" />
     </task>
     <task id="LOCAL-00001" summary="verwijder node_modules">
       <option name="closed" value="true" />
@@ -283,7 +278,23 @@
       <option name="project" value="LOCAL" />
       <updated>1707413428806</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="hero-section update">
+      <option name="closed" value="true" />
+      <created>1707415459817</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1707415459817</updated>
+    </task>
+    <task id="LOCAL-00022" summary="hero-section update">
+      <option name="closed" value="true" />
+      <created>1707415505520</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1707415505520</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
