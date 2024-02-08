@@ -78,19 +78,16 @@ function toonGesponsordeLeden(gesponsordeLeden) {
     table.appendChild(headerRow);
 
     gesponsordeLeden.forEach((donatie) => {
-        let rowLidID = document.createElement('tr');
+        let row = document.createElement('tr');
         let cellLidID = document.createElement('td');
-
-        cellLidID.textContent = donatie.lidID;
-        rowLidID.appendChild(cellLidID);
-
-        let rowBedrag = document.createElement('tr');
         let cellBedrag = document.createElement('td');
 
+        cellLidID.textContent = donatie.lidID;
         cellBedrag.textContent = donatie.bedrag;
-        rowBedrag.appendChild(cellBedrag);
 
-        table.appendChild(rowLidID);
-        table.appendChild(rowBedrag);
+        row.appendChild(cellLidID);
+        row.appendChild(cellBedrag);
+
+        table.appendChild(row);
     });
 }

@@ -49,7 +49,7 @@ var uiConfig = {
         signInSuccessWithAuthResult: function(authResult, redirectUrl) {
 
             // Gebruiker is succesvol geregistreerd.
-            window.location.href = "index.html";
+            window.location.href = "donate.html";
             return true;  // Wanneer deze methode true retourneert, wordt de pagina vernieuwd.
         },
         uiShown: function() {
