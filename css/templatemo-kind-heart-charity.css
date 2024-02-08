@@ -451,9 +451,6 @@ justify-content: center;
   font-size: 12vw;
   color: white;
 
-  background:     url(/images/animatie/text.jpg) repeat;
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
 
 }
 .hero-subtitle {
