@@ -11,9 +11,14 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
 
     firebase.auth().signInWithEmailAndPassword(email, password)
         .then((userCredential) => {
+
             // De gebruiker is ingelogd
             var user = userCredential.user;
-            window.location.href = "donate.html";
+            user.updateProfile({
+                displayName: user.uid
+            }).then(() => {
+                window.location.href = "donate.html";
+            });
         })
         .catch((error) => {
             var errorCode = error.code;

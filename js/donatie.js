@@ -43,7 +43,7 @@ document.getElementById('close').addEventListener('click', function() {
 });
 
 /*----------------------------------------------------*/
-/*  de big boy functies
+/*  donatie functies
 /*----------------------------------------------------*/
 
 let parsedData = null;
@@ -55,21 +55,17 @@ async function parseCsvData() {
     parsedData = Papa.parse(data, { header: true, dynamicTyping: true, delimiter: ",", skipEmptyLines: true }).data;
 }
 
-
 // Functie om de overeenkomende 'Takken' waarde te vinden voor een gegeven naam
 function findMatchingTak(name) {
     let matchingRow = parsedData.find(row => row['Naam'] === name);
     return matchingRow ? matchingRow['Takken'] : alert('Geen tak gevonden voor ' + name);
 }
 
-
 // Functie om de geselecteerde namen op te halen
 function getSelectedNames() {
     const selectedNamesDiv = document.getElementById('geselecteerdeNamen');
     return Array.from(selectedNamesDiv.children).map(child => child.textContent.slice(0, -1));
 }
-
-
 
 // Functie om het geselecteerde bedrag op te halen
 function getSelectedAmount() {
@@ -82,65 +78,43 @@ function getSelectedAmount() {
     return document.querySelector('input[aria-label="hoeveelheid"]').value;
 }
 
-
-
 document.getElementById('Goed').addEventListener('click', async () => {
+    console.log(firebase.auth().currentUser);
     if (!parsedData) {
         await parseCsvData();
     }
-
+    const userID = firebase.auth().currentUser.uid;
+    console.log(userID);
     const username = firebase.auth().currentUser.displayName;
     const email = firebase.auth().currentUser.email;
     const amount = getSelectedAmount();
     const selectedNames = getSelectedNames();
 
+    let donateurRef = db.collection('Donateurs').doc(userID);
+
+    donateurRef.set({
+        Naam: username,
+        Email: email
+    }, { merge: true });
+
     for (let name of selectedNames) {
         let tak = findMatchingTak(name);
         if (tak) {
-            let donateurRef = db.collection('Donateurs').doc(username);
+            let donatieRef = donateurRef.collection('Donaties').doc();
 
-            donateurRef.set({
-                Naam: username,
-                Email: email
-            }, { merge: true });
-
-            donateurRef.collection('Sponsoring').doc().set({
+            donatieRef.set({
                 LidID: name,
                 Bedrag: amount
-            });
-
-            let lidRef = db.collection('Leden').doc(name);
-
-            lidRef.set({
-                Naam: name,
-                Tak: tak
-            }, { merge: true });
-
-            lidRef.collection('OntvangenDonaties').doc().set({
-                DonateurID: username,
-                Bedrag: amount
             }).then(() => {
-                // Update het 'TotaalGesponsord' veld
-                lidRef.update({
-
-                    TotaalGesponsord: firebase.firestore.FieldValue.increment(amount)
-                }).then(() => {
-
-                    alert("De donatie is succesvol verwerkt");
-                    window.location.href = "index.html";
-                }).catch((error) => {
-
-                    console.error("Error writing document: ", error);
-                    // Controleer of de fout te maken heeft met quota overschrijding
-                    if (error.code === 'resource-exhausted') {
-                        alert('Limiet is vandaaag bereikt, probeer het morgen opnieuw');
-                    } else {
-                        alert('Er is een fout opgetreden bij het schrijven van de gegevens');
-                    }
-                });
+                alert("De donatie is succesvol verwerkt");
+                window.location.href = "index.html";
             }).catch((error) => {
                 console.error("Error writing document: ", error);
-                alert('Er is een fout opgetreden bij het schrijven van de gegevens probeer het opnieuw');
+                if (error.code === 'resource-exhausted') {
+                    alert('Limiet is vandaag bereikt, probeer het morgen opnieuw');
+                } else {
+                    alert('Er is een fout opgetreden bij het schrijven van de gegevens');
+                }
             });
         }
     }

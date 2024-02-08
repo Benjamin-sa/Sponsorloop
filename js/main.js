@@ -21,23 +21,6 @@ let animation = lottie.loadAnimation({
 });
 
 
-document.addEventListener('DOMContentLoaded', function() {
-    const movementStrength = 500;
-    const height = movementStrength / window.innerHeight;
-    const width = movementStrength / window.innerWidth;
-    const heroSection = document.querySelector('.hero-section');
-    const heroTitle = document.querySelector('.hero-title');
-
-    heroSection.addEventListener('mousemove', function(e) {
-        const pageX = e.pageX - (window.innerWidth / 2);
-        const pageY = e.pageY - (window.innerHeight / 2);
-        const newvalueX = width * pageX * -1 - 25;
-        const newvalueY = height * pageY * -1 - 50;
-        heroTitle.style.backgroundPosition = `${newvalueX}px ${newvalueY}px`;
-    });
-});
-
-
 // Functie om de animatie te starten
 function startAnimation() {
     $(".hero-section").css({

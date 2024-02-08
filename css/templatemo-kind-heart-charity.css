@@ -446,7 +446,6 @@ justify-content: center;
 
 }
 
-
 .hero-title {
   font-weight: 1000;
   font-size: 12vw;
@@ -509,6 +508,7 @@ justify-content: center;
 #section_2{
   position: relative;
   top: 100vh;
+  width: 100%;
   padding-top: 50px;
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
@@ -587,6 +587,7 @@ justify-content: center;
 
 .main-timeline-2 {
   position: relative;
+  width: 100%;
 
 }
 
