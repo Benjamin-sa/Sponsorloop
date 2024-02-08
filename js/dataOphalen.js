@@ -55,8 +55,6 @@ function haalDonatiesOpVanGebruiker() {
     });
 }
 
-
-
 function toonGesponsordeLeden(gesponsordeLeden) {
     let bestaandeTabel = document.getElementById('gesponsordeNamenTabel');
     if (bestaandeTabel) {
@@ -80,15 +78,19 @@ function toonGesponsordeLeden(gesponsordeLeden) {
     table.appendChild(headerRow);
 
     gesponsordeLeden.forEach((donatie) => {
-        let row = document.createElement('tr');
+        let rowLidID = document.createElement('tr');
         let cellLidID = document.createElement('td');
-        let cellBedrag = document.createElement('td');
 
         cellLidID.textContent = donatie.lidID;
-        cellBedrag.textContent = donatie.bedrag;
-        row.appendChild(cellLidID);
-        row.appendChild(cellBedrag);
+        rowLidID.appendChild(cellLidID);
 
-        table.appendChild(row);
+        let rowBedrag = document.createElement('tr');
+        let cellBedrag = document.createElement('td');
+
+        cellBedrag.textContent = donatie.bedrag;
+        rowBedrag.appendChild(cellBedrag);
+
+        table.appendChild(rowLidID);
+        table.appendChild(rowBedrag);
     });
 }
