@@ -415,6 +415,7 @@ LOGIN FORM
   align-items: center;
 justify-content: center;
 
+
 }
 .hero-section::before {
   content: "";
@@ -425,6 +426,8 @@ justify-content: center;
   background: inherit;
   filter: blur(3px) brightness(0.4);
   z-index: -1;
+
+
 }
 
 .hero-section-text {
@@ -439,10 +442,22 @@ justify-content: center;
 }
 
 .hero-title, .hero-subtitle {
-  letter-spacing: 8px;
-  margin-bottom: 20px;
-  background: transparent;
-  position: relative;
+  font-size: 600%;
+  font-weight: 900;
+  letter-spacing: 0;
+
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /*   -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black; */
+  background-image: linear-gradient(
+          245deg,
+          rgb(41, 94, 21) 20%,
+          rgb(26, 42, 86) 48%,
+          rgb(197, 222, 189) 75%
+  );
+  background-size: 140%;
   animation: text 2.5s 1;
 
 
