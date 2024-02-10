@@ -92,9 +92,11 @@ https://templatemo.com/tm-581-kind-heart-charity
 
 body {
   font-family: var(--body-font-family);
-  overflow-x: hidden;
   width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
+
 
 
 /*---------------------------------------
@@ -312,12 +314,13 @@ p {
 
 @media screen and (max-width: 600px) {
   .custom-text-box-image {
-    padding: 5px;
+    padding: 15px;
+    margin: 5px;
   }
 
   .custom-text-box{
     padding: 20px;
-    margin: 5px;
+    margin: 10px;
 
   }
 }
@@ -402,32 +405,18 @@ LOGIN FORM
 -----------------------------------------*/
 
 
-.hero-section {
-  position: fixed;
-  width: 100vw;
-  overflow-x: hidden;
-  height: 100vh;
-  background: url('../images/scouts/hero.jpg') no-repeat center center;
-  background-size: cover;
-
-  z-index: 1;
-  display: flex;
-  align-items: center;
-justify-content: center;
+.hero .hero-image {
+  position: absolute;
+  width: 100%;
 
 
 }
-.hero-section::before {
-  content: "";
+
+.hero .hero-image img {
   position: absolute;
-  left : -20px;
-  width: 110%;
-  height: 110%;
-  background: inherit;
-  filter: blur(3px) brightness(0.4);
-  z-index: -1;
-
-
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
 }
 
 .hero-section-text {
@@ -437,8 +426,6 @@ justify-content: center;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  display: block;
-
 }
 
 .hero-title, .hero-subtitle {
@@ -454,7 +441,7 @@ justify-content: center;
   background-image: linear-gradient(
           245deg,
           rgb(41, 94, 21) 20%,
-          rgb(26, 42, 86) 48%,
+          rgb(92, 138, 80) 48%,
           rgb(197, 222, 189) 75%
   );
   background-size: 140%;
@@ -488,22 +475,6 @@ justify-content: center;
 }
 
 
-.arrow-circle {
-  position: absolute;
-  top: 70vh;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 75px;
-  height: 75px;
-  border-radius: 50%;
-  background-color: Transparent;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 3;
-
-}
-
 
 /*---------------------------------------
   ABOUT SECTION
@@ -511,11 +482,7 @@ justify-content: center;
 
 #section_2{
   position: relative;
-  top: 100vh;
-  width: 100%;
-  padding-top: 50px;
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
+  top:95vh;
   z-index: 2;
 }
 
@@ -1066,7 +1033,7 @@ button:active {
 }
 
 /*---------------------------------------
-  images.animatie
+  animatie
 -----------------------------------------*/
 .rechtsanimatie{
   opacity: 0;

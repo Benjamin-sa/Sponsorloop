@@ -12,108 +12,30 @@ window.addEventListener('load', function() {
     }, 500); // Vertraging van halve seconde
 });
 
-let animation = lottie.loadAnimation({
-    container: document.getElementById('lottie-animation'), // het DOM-element waar de animatie wordt geladen
-    renderer: 'svg',
-    loop: true,
-    autoplay: true,
-    path: 'images/animatie/icons8-chevron.json' // het pad naar de JSON-animatiebestand
-});
+let lastScrollTop = 0;
+let ticking = false;
 
+function doSomething(scrollPos) {
+    var factorBackground = scrollPos * .4;
+    $('.hero-image-background').css({'transform': `translateY(${factorBackground}px)`});
+    const title = document.querySelector('.hero-title');
+    const subtitle = document.querySelector('.hero-subtitle');
 
-// Functie om de animatie te starten
-function startAnimation() {
-    $(".hero-section").css({
-        transform: 'translateY(-15vh)',
-        transition: 'transform 2s'
-    });
+    const scrolled = window.scrollY;
 
-    $(".hero-title").css({
-        transform: 'translateY(15vh)',
-        transition: 'transform 2s'
-    });
-
-    $(".hero-subtitle").css({
-        transform: 'translateY(30vh)',
-        transition: 'transform 2s'
-    });
-
-    $("#section_2").css({
-        transform: 'translateY(-100vh)',
-        transition: 'transform 2s'
-    });
-
-    document.body.style.overflow = 'auto';
+    title.style.transform = `translateY(${scrolled * title.dataset.speed}px)`;
+    subtitle.style.transform = `translateY(${scrolled * subtitle.dataset.speed}px)`;
 }
-
-function handleScrollAndTouch() {
-    // Voeg event listeners toe voor touchstart, touchend en touchmove
-    document.addEventListener('touchstart', function(e) {
-        touchStartY = e.changedTouches[0].screenY;
-    }, false);
-
-    document.addEventListener('touchend', function(e) {
-        touchEndY = e.changedTouches[0].screenY;
-        handleSwipe();
-    }, false);
-
-    document.addEventListener('touchmove', function(e) {
-        if (document.body.style.overflow === 'hidden') {
-            console.log('Scroll gedetecteerd terwijl overflow op hidden is ingesteld');
-        }
-    });
-
-    // Voeg een event listener toe voor het scroll event
-    window.addEventListener('scroll', function() {
-        if ($(window).scrollTop() > 0 && $("#section_2").css('transform') !== 'translateY(-100vh)') {
-            startAnimation();
-        }
-    });
-
-    // Functie om de swipe te verwerken
-    function handleSwipe() {
-        if (touchEndY < touchStartY) {
-            startAnimation();
-        }
+window.addEventListener('scroll', function(e) {
+    lastScrollTop = window.scrollY;
+    if (!ticking) {
+        window.requestAnimationFrame(function() {
+            doSomething(lastScrollTop);
+            ticking = false;
+        });
+        ticking = true;
     }
-}
-
-// Roep de functie aan
-handleScrollAndTouch();
-
-var button = document.getElementById('lottie-animation'); // Vervang 'yourButtonId' door het daadwerkelijke id van uw knop
-button.addEventListener('click', function() {
-    // Start de animatie
-    startAnimation();
 });
-
-document.getElementById('resetButton').addEventListener('click', function() {
-    hasScrolled = false;
-
-    $(".hero-section").css({
-        transform: 'translateY(0)',
-        transition: 'transform 2s'
-    });
-
-    $(".hero-title").css({
-        transform: 'translateY(0)',
-        transition: 'transform 2s'
-    });
-
-    $(".hero-subtitle").css({
-        transform: 'translateY(0)',
-        transition: 'transform 2s'
-    });
-
-    $("#section_2").css({
-        transform: 'translateY(0)',
-        transition: 'transform 2s'
-    });
-
-    document.body.style.overflow = 'hidden';
-
-});
-
 // ingelogde gebruiker
 function handleLoggedInUser(user) {
     var followDiv = document.querySelector('.follow');
@@ -166,12 +88,17 @@ let observer = new IntersectionObserver((entries) => {
             entry.target.classList.remove('animate');
         }
     });
-}, { threshold: 0.2 });  // threshold bepaalt hoeveel van het element zichtbaar moet zijn voordat de callback wordt getriggerd
+}, { threshold: 0.3 });  // threshold bepaalt hoeveel van het element zichtbaar moet zijn voordat de callback wordt getriggerd
 
 // Voeg voor elk geselecteerd element de observer toe
 divs.forEach(div => {
     observer.observe(div);
 });
+
+
+
+
+
 
 // close button en sponsor knop laten werken
 document.addEventListener('DOMContentLoaded', function() {
