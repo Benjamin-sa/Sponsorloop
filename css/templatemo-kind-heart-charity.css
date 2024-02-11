@@ -92,8 +92,8 @@ https://templatemo.com/tm-581-kind-heart-charity
 
 body {
   font-family: var(--body-font-family);
-  width: 100%;
-  overflow-x: hidden;
+  width: 100vw;
+    overflow-x: clip;
   scroll-behavior: smooth;
 }
 
@@ -272,9 +272,9 @@ p {
   font-weight: 400;
   text-decoration-line: none;
   z-index: 3;
-  position: fixed; /* Zorgt ervoor dat de knop op een vaste positie blijft */
-  right: 20px; /* Plaats de knop 10px van de rechterkant van het scherm */
-  top: 20px; /* Plaats de knop 10px van de bovenkant van het scherm */
+  position: fixed;
+  right: 20px;
+  top: 20px;
 }
 
 /*---------------------------------------
@@ -407,14 +407,13 @@ LOGIN FORM
 
 .hero .hero-image {
   position: absolute;
-  width: 100%;
+  width : 100%;
 
 
 }
 
-.hero .hero-image img {
+.hero-image img {
   position: absolute;
-  width: 100%;
   height: 100vh;
   object-fit: cover;
 }
@@ -484,6 +483,8 @@ LOGIN FORM
   position: relative;
   top:95vh;
   z-index: 2;
+  border-top-left-radius: 70px;
+  border-top-right-radius: 70px;
 }
 
 .pulsediv{
@@ -501,7 +502,7 @@ LOGIN FORM
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 400px;
+  width: 350px;
   height: 100px;
   font-size: 1.3em;
   text-align: center;
@@ -585,6 +586,7 @@ LOGIN FORM
   width: 50%;
   opacity: 0;
   transform: translateY(20px);
+  filter: blur(3px);
   transition: all 0.5s ease-out;
   z-index: 1;
 }
@@ -592,6 +594,7 @@ LOGIN FORM
 .timeline-2.animate {
   opacity: 1;
   transform: translateY(0);
+  filter: blur(0);
 }
 
 /* The circles on the timeline */
@@ -683,7 +686,7 @@ LOGIN FORM
 
   /* Make all right containers behave like the left ones */
   .right-2 {
-    left: 0%;
+    left: 0;
   }
 }
 @media screen and (max-width: 290px) {
@@ -1038,23 +1041,27 @@ button:active {
 .rechtsanimatie{
   opacity: 0;
   transform: translatex(-20px);
+  filter: blur(3px);
   transition: all 0.5s ease-out;
 }
 
 .rechtsanimatie.animate{
   opacity: 1;
   transform: translatex(0);
+    filter: blur(0);
 }
 
 .linksanimatie{
   opacity: 0;
   transform: translatex(20px);
+  filter : blur(3px);
   transition: all 0.5s ease-out;
 }
 
 .linksanimatie.animate{
   opacity: 1;
   transform: translatex(0);
+    filter: blur(0);
 }
 /*---------------------------------------
   RESPONSIVE STYLES

@@ -1,13 +1,13 @@
 <!doctype html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="sponsorloop">
+    <meta name="author" content="Benjamin">
 
-    <title></title>
+    <title>Lod Lavki SponsorLoop</title>
 
     <!-- CSS FILES -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -20,35 +20,31 @@
 
 <body>
 
-<div id="loading-screen">
-    <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
-        <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
-    </svg>
-    <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-        <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
-    </svg>
-</div>
-<header>
-    <div class="login">
-        <a class="follow" target="_blank"></a>
+
+<header id="section_1" class="hero">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-12 p-0">
+                <div class="hero-image hero-image-background">
+                    <picture>
+                        <img src="images/scouts/herofoto.jpg" alt="Hero Image" class="img-fluid" width="3451"
+                             height="2329">
+                    </picture>
+                </div>
+                <div class="hero-section-text">
+                    <h1 class="hero-title" data-speed="0.6">SponsorLoop</h1>
+                    <h3 class="hero-subtitle" data-speed="0.7">Lod Lavki</h3>
+                </div>
+            </div>
+        </div>
     </div>
 </header>
 
 
-    <header id="section_1">
-        <div class="hero center-bottom vw-100">
-        <div class="hero-image hero-image-background">
-<picture>
-    <img src="images/scouts/herofoto.jpg" alt="Hero Image" class="img-fluid" width="3451" height="2329">
-</picture>
-        </div>
-        <div class="hero-section-text">
-                <h1 class="hero-title" data-speed="0.6">SponsorLoop</h1>
-                <h3 class="hero-subtitle" data-speed="0.7">Lod Lavki</h3>
-            </div>
-        </div>
-
-    </header>
+<main>
+    <div class="login">
+        <a class="follow" target="_blank"></a>
+    </div>
 
     <div id="loginForm" class="p-3 border rounded">
         <a href="#" class="close-button">&#10006;</a>
@@ -63,11 +59,17 @@
         <div id="firebaseui-auth-container"></div>
     </div>
 
-<main>
+    <div id="loading-screen">
+        <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+            <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+        </svg>
+        <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+            <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+        </svg>
+    </div>
     <section class="section-padding section-bg" id="section_2">
 
         <div class="container">
-            </div>
             <div class="row">
                 <div class="col-lg-6">
                     <div class="custom-text-box rechtsanimatie">
@@ -84,7 +86,7 @@
                 </div>
 
                 <div class="col-lg-6 custom-text-box-image linksanimatie">
-                <img src="images/scouts/groepsfoto.jpg" alt="Groepsfoto" class="img-fluid w-100">
+                <img src="images/scouts/groepsfoto.jpg" alt="Groepsfoto" class="img-fluid rounded-5 " loading="lazy">
                 </div>
             </div>
 
@@ -120,20 +122,28 @@
                     </div>
                 </div>
             </div>
-
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-12">
             <div class="pulsediv">
                 <button class="pulse-button">Sponsor een Loper!</button>
             </div>
+            </div>
+        </div>
+        </div>
+
         <div class="row">
+            <div class="col-lg-12 col-md-12 col-12">
             <div class="text-center custom-text-box">
                 <h2>Lod Lavki en zijn geschiedenis</h2>
             </div>
+            </div>
         </div>
-            <div class="container">
-                <div class="main-timeline-2">
+        <div class="container">
+            <div class="col-lg-12 col-md-12 col-12">
+            <div class="main-timeline-2">
                     <div class="timeline-2 left-2">
                         <div class="card">
-                            <img src="images/scouts/v1.jpg" class="card-img"
+                            <img src="images/scouts/v1.jpg" class="card-img" loading="lazy"
                                  alt="Responsive image">
                             <div class="card-body p-4">
                                 <h4 class="fw-bold mb-4">Oprichting van "den Eersten Troep "</h4>
@@ -147,7 +157,7 @@
                     </div>
                     <div class="timeline-2 right-2">
                         <div class="card">
-                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(129).webp" class="card-img"
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(129).webp" class="card-img" loading="lazy"
                                  alt="Responsive image">
                             <div class="card-body p-4">
                                 <h4 class="fw-bold mb-4">Overlijden van Lod Lavki en transformatie tot Lod
@@ -161,7 +171,7 @@
                     </div>
                     <div class="timeline-2 left-2">
                         <div class="card">
-                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(131).webp" class="card-img-top"
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(131).webp" class="card-img-top" loading="lazy"
                                  alt="Responsive image">
                             <div class="card-body p-4">
                                 <h4 class="fw-bold mb-4">Veranderingen in leiderschap en aalmoezeniers </h4>
@@ -175,7 +185,7 @@
                     </div>
                     <div class="timeline-2 right-2">
                         <div class="card">
-                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(125).webp" class="card-img-top"
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(125).webp" class="card-img-top" loading="lazy"
                                  alt="Responsive image">
                             <div class="card-body p-4">
                                 <h4 class="fw-bold mb-4"> Viering van het 65-jarig bestaan en voortdurende
@@ -192,7 +202,7 @@
                     </div>
                     <div class="timeline-2 left-2">
                         <div class="card">
-                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(144).webp" class="card-img-top"
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(144).webp" class="card-img-top" loading="lazy"
                                  alt="Responsive image">
                             <div class="card-body p-4">
                                 <h4 class="fw-bold mb-4">Mussum ipsum cacilds</h4>
@@ -206,6 +216,7 @@
                                     perferendis doloribus asperiores repellat.</p>
                             </div>
                         </div>
+                    </div>
                     </div>
                 </div>
             </div>
