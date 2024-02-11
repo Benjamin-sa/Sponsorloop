@@ -93,7 +93,7 @@ https://templatemo.com/tm-581-kind-heart-charity
 body {
   font-family: var(--body-font-family);
   width: 100vw;
-    overflow-x: clip;
+  overflow-x: clip;
   scroll-behavior: smooth;
 }
 

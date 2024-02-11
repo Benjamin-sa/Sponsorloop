@@ -88,7 +88,7 @@ let observer = new IntersectionObserver((entries) => {
             entry.target.classList.remove('animate');
         }
     });
-}, { threshold: 0.3 });  // threshold bepaalt hoeveel van het element zichtbaar moet zijn voordat de callback wordt getriggerd
+}, { threshold: 0.2});  // threshold bepaalt hoeveel van het element zichtbaar moet zijn voordat de callback wordt getriggerd
 
 // Voeg voor elk geselecteerd element de observer toe
 divs.forEach(div => {
