@@ -131,7 +131,64 @@ document.getElementById("Goed").addEventListener("click", async () => {
             body: JSON.stringify({
               to: email,
               subject: "Donatie bevestiging",
-              text: `Bedankt voor je donatie van ${amount} aan ${name}!`,
+              html: `
+      <!DOCTYPE html>
+      <html>
+      <head>
+      <style>
+      body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #f0f0f0;
+      }
+
+      .email-container {
+          width: 100%;
+          max-width: 600px;
+          margin: 0 auto;
+          padding: 20px;
+          background-color: #ffffff;
+          box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+      }
+
+      .header {
+          text-align: center;
+          padding: 20px 0;
+      }
+
+      .content {
+          padding: 20px;
+      }
+
+      .footer {
+          text-align: center;
+          padding: 20px 0;
+          color: #888888;
+          font-size: 12px;
+      }
+  </style>
+      </head>
+      <body>
+          <div class="email-container">
+              <div class="header">
+              <img src=""C:\Users\benke\OneDrive\Bureaublad\sponsorloop\Sponsorloop\images\scouts\Sponserloop.png"" alt="Scouts Lodlavki Logo">
+              <h1>Bedankt voor je donatie!</h1>
+              </div>
+              <div class="content">
+                  <p>Beste ${username},</p>
+                  <p>Hartelijk dank voor uw donatie van €${amount} aan ${name} voor de sponsorloop van Scouts Lodlavki in 2024! We zijn enorm blij met uw steun.</p>
+                  <p>Met vriendelijke groeten,</p>
+                  <p>Scouts Lodlavki</p>
+              </div>
+              <div class="footer">
+                  <p>Je ontvangt deze e-mail als bevestiging van je donatie aan Scouts Lodlavki.</p>
+              </div>
+          </div>
+      </body>
+      </html>
+    `,
+              
             }),
           })
             .then((response) => response.text())

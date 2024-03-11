@@ -1,8 +1,8 @@
 {
   "name": "sponsorloop",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.html",
+  "description": "sponsorloop webite",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },

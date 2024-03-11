@@ -26,24 +26,22 @@ const mailgun = new Mailgun(formData);
 const mg = mailgun.client({ username: 'api', key: process.env.MAILGUN_API_KEY || '', url: 'https://api.eu.mailgun.net' });
 
 app.post('/send-email', (req, res) => {
-    const { to, subject, text } = req.body;
+  let mailOptions = {
+    from: 'Sponsorloop LodLavki <mailgun@lodlavki-sponsorloop.me>',
+    to: req.body.to,
+    subject: req.body.subject,
+    html: req.body.html
+  };
 
-    const data = {
-        from: 'Excited User <mailgun@lodlavki-sponsorloop.me>',
-        to: to,
-        subject: subject,
-        text: text
-    };
-
-    mg.messages.create('lodlavki-sponsorloop.me', data)
-        .then(msg => {
-            console.log(msg);
-            res.status(200).send('Email sent');
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).send('Error sending email');
-        });
+  mg.messages.create('lodlavki-sponsorloop.me', mailOptions)
+    .then(msg => {
+      console.log('Email sent: ' + msg.id);
+      res.status(200).send('Email sent: ' + msg.id);
+    })
+    .catch(error => {
+      console.log(error);
+      res.status(500).send(error);
+    });
 });
 
 module.exports = mg;
