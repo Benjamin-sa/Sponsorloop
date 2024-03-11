@@ -16,8 +16,8 @@ let lastScrollTop = 0;
 let ticking = false;
 
 function doSomething(scrollPos) {
-    var factorBackground = scrollPos * .4;
-    $('.hero-image-background').css({'transform': `translateY(${factorBackground}px)`});
+    const factorBackground = scrollPos * 0.4;
+    $('.hero-image-background').css({ transform: `translateY(${factorBackground}px)` });
     const title = document.querySelector('.hero-title');
     const subtitle = document.querySelector('.hero-subtitle');
 
@@ -26,16 +26,19 @@ function doSomething(scrollPos) {
     title.style.transform = `translateY(${scrolled * title.dataset.speed}px)`;
     subtitle.style.transform = `translateY(${scrolled * subtitle.dataset.speed}px)`;
 }
-window.addEventListener('scroll', function(e) {
+
+function handleScroll() {
     lastScrollTop = window.scrollY;
     if (!ticking) {
-        window.requestAnimationFrame(function() {
+        window.requestAnimationFrame(function () {
             doSomething(lastScrollTop);
             ticking = false;
         });
         ticking = true;
     }
-});
+}
+
+window.addEventListener('scroll', handleScroll);
 // ingelogde gebruiker
 function handleLoggedInUser(user) {
     var followDiv = document.querySelector('.follow');

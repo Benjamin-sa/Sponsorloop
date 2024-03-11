@@ -462,6 +462,12 @@ LOGIN FORM
   font-weight: 1500;
 
 }
+
+.hero-image-background, .hero-title, .hero-subtitle {
+  will-change: transform;
+  backface-visibility: hidden;
+
+}
 @keyframes text {
   0%{
     color: black;
