@@ -30,7 +30,8 @@ app.post('/send-email', (req, res) => {
     from: 'Sponsorloop LodLavki <mailgun@lodlavki-sponsorloop.me>',
     to: req.body.to,
     subject: req.body.subject,
-    html: req.body.html
+    html: req.body.html,
+    attachment: req.body.attachment
   };
 
   mg.messages.create('lodlavki-sponsorloop.me', mailOptions)

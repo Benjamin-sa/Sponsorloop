@@ -131,6 +131,7 @@ document.getElementById("Goed").addEventListener("click", async () => {
             body: JSON.stringify({
               to: email,
               subject: "Donatie bevestiging",
+              attachement: 'https://github.com/Benjamin-sa/Sponsorloop/blob/170104d30ed74b88f21534bdeccd5ddbd352af32/images/scouts/Sponserloop.png',
               html: `
       <!DOCTYPE html>
       <html>
@@ -172,7 +173,7 @@ document.getElementById("Goed").addEventListener("click", async () => {
       <body>
           <div class="email-container">
               <div class="header">
-              <img src=""C:\Users\benke\OneDrive\Bureaublad\sponsorloop\Sponsorloop\images\scouts\Sponserloop.png"" alt="Scouts Lodlavki Logo">
+              <img src="Sponsorloop\images\scouts\Sponserloop.png" alt="Scouts Lodlavki Logo">
               <h1>Bedankt voor je donatie!</h1>
               </div>
               <div class="content">

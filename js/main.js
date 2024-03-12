@@ -16,8 +16,7 @@ let lastScrollTop = 0;
 let ticking = false;
 
 function doSomething(scrollPos) {
-    const factorBackground = scrollPos * 0.4;
-    $('.hero-image-background').css({ transform: `translateY(${factorBackground}px)` });
+   
     const title = document.querySelector('.hero-title');
     const subtitle = document.querySelector('.hero-subtitle');
 
