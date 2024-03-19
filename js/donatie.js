@@ -178,7 +178,7 @@ document.getElementById("Goed").addEventListener("click", async () => {
               </div>
               <div class="content">
                   <p>Beste ${username},</p>
-                  <p>Hartelijk dank voor uw donatie van €${amount} aan ${name} voor de sponsorloop van Scouts Lodlavki! We zijn enorm blij met uw steun.</p>
+                  <p>Hartelijk dank voor uw donatie van €${amount}/ronde (250m) aan ${name} voor de sponsorloop van Scouts Lodlavki! We zijn enorm blij met uw steun.</p>
                   <p>Met vriendelijke groeten,</p>
                   <p>Scouts Lodlavki</p>
               </div>
