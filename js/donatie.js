@@ -149,8 +149,9 @@ document.getElementById("Goed").addEventListener("click", async () => {
           margin: 0 auto;
           padding: 20px;
           background-color: #212529;
+          color: #ffffff;
           box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
-          border-radius: 5px;
+          border-radius: 10px;
       }
 
       .header {
@@ -173,7 +174,7 @@ document.getElementById("Goed").addEventListener("click", async () => {
       <body>
           <div class="email-container">
               <div class="header">
-              <img src="https://lodlavki-sponsorloop.me/images/scouts/Sponserloop.png" alt="Scouts Lodlavki Logo">
+              <img src="https://lodlavki-sponsorloop.me/images/scouts/Sponserloop.png" alt="Scouts Lodlavki Logo" style="width: 90%; height: auto;">
               <h1>Bedankt voor je donatie!</h1>
               </div>
               <div class="content">
