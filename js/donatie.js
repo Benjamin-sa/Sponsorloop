@@ -148,8 +148,9 @@ document.getElementById("Goed").addEventListener("click", async () => {
           max-width: 600px;
           margin: 0 auto;
           padding: 20px;
-          background-color: #ffffff;
+          background-color: #212529;
           box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+          border-radius: 5px;
       }
 
       .header {
@@ -177,7 +178,7 @@ document.getElementById("Goed").addEventListener("click", async () => {
               </div>
               <div class="content">
                   <p>Beste ${username},</p>
-                  <p>Hartelijk dank voor uw donatie van €${amount} aan ${name} voor de sponsorloop van Scouts Lodlavki in 2024! We zijn enorm blij met uw steun.</p>
+                  <p>Hartelijk dank voor uw donatie van €${amount} aan ${name} voor de sponsorloop van Scouts Lodlavki! We zijn enorm blij met uw steun.</p>
                   <p>Met vriendelijke groeten,</p>
                   <p>Scouts Lodlavki</p>
               </div>
