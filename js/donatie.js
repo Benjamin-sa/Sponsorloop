@@ -172,7 +172,7 @@ document.getElementById("Goed").addEventListener("click", async () => {
       <body>
           <div class="email-container">
               <div class="header">
-              <img src="https://lodlavki-sponsorloop.me/images/scouts/logo.png" alt="Scouts Lodlavki Logo">
+              <img src="https://lodlavki-sponsorloop.me/images/scouts/Sponserloop.png" alt="Scouts Lodlavki Logo">
               <h1>Bedankt voor je donatie!</h1>
               </div>
               <div class="content">
