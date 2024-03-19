@@ -483,6 +483,10 @@ LOGIN FORM
   ABOUT SECTION
 -----------------------------------------*/
 
+#hidden-image {
+  display: none;
+}
+
 #section_2{
   position: relative;
   top: -7vh;
