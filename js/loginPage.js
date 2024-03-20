@@ -38,7 +38,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
                     alert('Het ingevoerde wachtwoord is onjuist.');
                     break;
                 default:
-                    alert(errorMessage);  // Toon het standaard foutbericht van Firebase
+                    alert("Oeps er is iets fout gegaan");  // Toon het standaard foutbericht van Firebase
                     break;
             }
         });
@@ -63,6 +63,9 @@ var uiConfig = {
         firebase.auth.EmailAuthProvider.PROVIDER_ID,
         firebase.auth.GoogleAuthProvider.PROVIDER_ID
     ],
+
+    privacyPolicyUrl: 'https://lodlavki-sponsorloop.me/voorwaarden.html'
+
     // Voorwaarden en privacybeleid
 };
 
