@@ -14,11 +14,18 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
 
             // De gebruiker is ingelogd
             var user = userCredential.user;
+            if (!user.emailVerified) {
+                user.sendEmailVerification().then(() => {
+                    alert('Verificatie email verzonden! Controleer uw inbox.');
+                    firebase.auth().signOut();
+                });
+            } else {
             user.updateProfile({
                 displayName: user.uid
             }).then(() => {
                 window.location.href = "donate.html";
             });
+        }
         })
         .catch((error) => {
             var errorCode = error.code;
@@ -47,10 +54,18 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
 var uiConfig = {
     callbacks: {
         signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+            var user = authResult.user;
+            if (!user.emailVerified) {
+                user.sendEmailVerification().then(() => {
+                    alert('Verificatie email verzonden! Controleer uw inbox.');
+                    firebase.auth().signOut();
+                });
+                return false;  // Voorkomt automatische omleiding na aanmelding
+            }
 
             // Gebruiker is succesvol geregistreerd.
             window.location.href = "donate.html";
-            return true;  // Wanneer deze methode true retourneert, wordt de pagina vernieuwd.
+            return true;  
         },
         uiShown: function() {
 
