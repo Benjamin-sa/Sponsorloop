@@ -21,7 +21,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
                 });
             } else {
             user.updateProfile({
-                displayName: user.uid
+                displayName: email
             }).then(() => {
                 window.location.href = "donate.html";
             });
@@ -45,7 +45,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
                     alert('Het ingevoerde wachtwoord is onjuist.');
                     break;
                 default:
-                    alert("Oeps er is iets fout gegaan");  // Toon het standaard foutbericht van Firebase
+                    alert("Controleer wachtwoord en e-mailadres");  // Toon het standaard foutbericht van Firebase
                     break;
             }
         });

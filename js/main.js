@@ -42,6 +42,8 @@ window.addEventListener('scroll', handleScroll);
 function handleLoggedInUser(user) {
     var followDiv = document.querySelector('.follow');
     var displayName = user.displayName;
+    console.log(displayName);
+
     followDiv.innerHTML = `<a>${displayName}</a> | <a id="logoutKnop">Uitloggen</a>`;
 
     document.getElementById('logoutKnop').addEventListener('click', function() {
