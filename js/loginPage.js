@@ -86,7 +86,11 @@ var uiConfig = {
 };
 
 if (/FBAN|FBAV/i.test(navigator.userAgent)) {
-    alert('Open deze pagina in een externe browser om in te loggen.');
+    
+    var messageDiv = document.createElement('div');
+    messageDiv.innerHTML = '<a href="https://lodlavki-sponsorloop.me/index.html">Open de website in een externe browser</a>';    
+    document.body.appendChild(messageDiv);
+
 } else {
     ui.start('#firebaseui-auth-container', uiConfig);
 }
