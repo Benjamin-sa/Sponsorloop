@@ -85,7 +85,11 @@ var uiConfig = {
     // Voorwaarden en privacybeleid
 };
 
-ui.start('#firebaseui-auth-container', uiConfig);
+if (/FBAN|FBAV/i.test(navigator.userAgent)) {
+    alert('Open deze pagina in een externe browser om in te loggen.');
+} else {
+    ui.start('#firebaseui-auth-container', uiConfig);
+}
 
 document.getElementById('forgotPassword').addEventListener('click', function() {
     var email = document.getElementById('loginEmailField').value;
