@@ -57,7 +57,7 @@ var uiConfig = {
         }
     },
     // Popup registratiestroom in plaats van redirectstroom.
-    signInFlow: 'popup',
+    signInFlow: 'redirect',
     // We tonen alleen e-mail als registratieoptie.
     signInOptions: [
         firebase.auth.EmailAuthProvider.PROVIDER_ID,
