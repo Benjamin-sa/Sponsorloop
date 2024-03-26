@@ -86,10 +86,10 @@ var uiConfig = {
 };
 
 if (/FBAN|FBAV/i.test(navigator.userAgent)) {
-    var messageDiv = document.createElement('div');
-    messageDiv.innerHTML = '<a href="https://lodlavki-sponsorloop.me/index.html">Open de website in een externe browser</a>';
-    messageDiv.style.color = 'red';   
-    document.body.appendChild(messageDiv);
+         
+var messageDiv = document.getElementById('messageDiv');
+messageDiv.innerHTML = 'Inloggen via de Facebook in-app browser is helaas niet mogelijk.<br><a href="https://lodlavki-sponsorloop.me/index.html">Open de website in een externe browser</a>';
+messageDiv.style.color = 'red';
 
 } else {
     ui.start('#firebaseui-auth-container', uiConfig);
