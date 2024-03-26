@@ -3,6 +3,10 @@
 // Initialiseer de FirebaseUI-widget met Firebase.
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
 
+
+
+
+
 document.getElementById('loginForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -87,11 +91,21 @@ var uiConfig = {
 if (/FBAN|FBAV/i.test(navigator.userAgent)) {
 
 var messageDiv = document.getElementById('messageDiv');
-messageDiv.innerHTML = 'Inloggen via de Facebook in-app browser is helaas niet mogelijk.<br><a>Open de website in een externe browser zoals safari of google chrome</a>';
+messageDiv.innerHTML = 'Inloggen via de Facebook in-app browser is helaas niet mogelijk.<br><a>Open de website in een externe browser zoals safari of google chrome</a><br><button class="btn" onclick="copyContent()">Copy!</button>';
 messageDiv.style.color = 'red';
 
 } else {
     ui.start('#firebaseui-auth-container', uiConfig);
+}
+
+function copyContent() {
+    navigator.clipboard.writeText(window.location.href)
+    .then(() => {
+        alert('Link gekopieerd naar klembord');
+    })
+    .catch(err => {
+        console.error('Kon de link niet kopiëren: ', err);
+    });
 }
 
 document.getElementById('forgotPassword').addEventListener('click', function() {
