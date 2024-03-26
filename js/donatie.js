@@ -1,5 +1,10 @@
 firebase.auth().onAuthStateChanged((user) => {
-  if (!user) {
+  if (user) {
+    if (!user.emailVerified) {
+      alert("Uw e-mailadres is nog niet geverifieerd.");
+      window.location.href = "index.html";
+    }
+  } else {
     window.location.href = "index.html";
   }
 });
@@ -30,7 +35,7 @@ submitButton.addEventListener("click", (event) => {
   const selectedNames = getSelectedNames();
   const amount = getSelectedAmount();
 
-  if (selectedNames.length > 0 && amount) {
+  if (selectedNames.length > 0 && amount >= 0) {
     const popup = document.getElementById("confirmation");
     popup.style.display = "block";
   } else {
@@ -88,7 +93,6 @@ function getSelectedAmount() {
 }
 
 document.getElementById("Goed").addEventListener("click", async () => {
-  console.log(firebase.auth().currentUser);
   if (!parsedData) {
     await parseCsvData();
   }
