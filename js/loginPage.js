@@ -86,9 +86,9 @@ var uiConfig = {
 };
 
 if (/FBAN|FBAV/i.test(navigator.userAgent)) {
-    
     var messageDiv = document.createElement('div');
-    messageDiv.innerHTML = '<a href="https://lodlavki-sponsorloop.me/index.html">Open de website in een externe browser</a>';    
+    messageDiv.innerHTML = '<a href="https://lodlavki-sponsorloop.me/index.html">Open de website in een externe browser</a>';
+    messageDiv.style.color = 'red';   
     document.body.appendChild(messageDiv);
 
 } else {
