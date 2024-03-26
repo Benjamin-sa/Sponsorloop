@@ -82,13 +82,12 @@ var uiConfig = {
     tosUrl: 'https://lodlavki-sponsorloop.me/voorwaarde.html',
     privacyPolicyUrl: 'https://lodlavki-sponsorloop.me/voorwaarde.html'
 
-    // Voorwaarden en privacybeleid
 };
 
 if (/FBAN|FBAV/i.test(navigator.userAgent)) {
-         
+
 var messageDiv = document.getElementById('messageDiv');
-messageDiv.innerHTML = 'Inloggen via de Facebook in-app browser is helaas niet mogelijk.<br><a href="https://lodlavki-sponsorloop.me/index.html">Open de website in een externe browser</a>';
+messageDiv.innerHTML = 'Inloggen via de Facebook in-app browser is helaas niet mogelijk.<br><a>Open de website in een externe browser zoals safari of google chrome</a>';
 messageDiv.style.color = 'red';
 
 } else {
