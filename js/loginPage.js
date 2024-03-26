@@ -64,7 +64,8 @@ var uiConfig = {
         firebase.auth.GoogleAuthProvider.PROVIDER_ID
     ],
 
-    privacyPolicyUrl: 'https://lodlavki-sponsorloop.me/voorwaarden.html'
+    tosUrl: 'https://lodlavki-sponsorloop.me/voorwaarde.html',
+    privacyPolicyUrl: 'https://lodlavki-sponsorloop.me/voorwaarde.html'
 
     // Voorwaarden en privacybeleid
 };

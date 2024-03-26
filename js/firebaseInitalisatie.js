@@ -11,4 +11,3 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 db = firebase.firestore();
-console.log('Firebase geinitialiseerd');
